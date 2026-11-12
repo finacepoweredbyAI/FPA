@@ -1,518 +1,778 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Puneet Bajaj | Strategic Finance, FP&A & AI-Enabled Finance Transformation</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Chart.js CDN for interactive charts -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        darkBg: '#090d16',
-                        cardBg: '#111827',
-                        cardHover: '#1f2937',
-                        accentCyan: '#06b6d4',
-                        accentEmerald: '#10b981',
-                        borderSubtle: '#374151'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #090d16;
-            color: #f3f4f6;
-        }
-        .glass-panel {
-            background: rgba(17, 24, 39, 0.7);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(55, 65, 81, 0.5);
-        }
-        .glow-text {
-            text-shadow: 0 0 20px rgba(6, 182, 212, 0.4);
-        }
-        .glow-box {
-            box-shadow: 0 0 25px rgba(6, 182, 212, 0.15);
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Puneet Bajaj | FP&A Leader – Planning, Forecasting, Finance Transformation & AI for Finance</title>
+<meta name="description" content="Puneet Bajaj - FP&A leader with 19+ years at Agilent Technologies and American Express: owner of the AOP, rolling forecasts, long-range plan and monthly CFO reporting for a $7B global business, strategic business partner to the CFO staff, and builder of AI/ML forecasting and automated FP&A.">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{ink:'#1F2A44',slate:'#5A6782',paper:'#F5F7FB',mist:'#EDF1F8',line:'#E1E6EF',cy:'#5B6CD6',cyd:'#3A47A8',em:'#3F8C78',am:'#B86E24',rose:'#C04B67'},fontFamily:{sans:['"Public Sans"','system-ui','sans-serif'],display:['"Schibsted Grotesk"','"Public Sans"','sans-serif']}}}}
+</script>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@500;600;700;800&family=Public+Sans:wght@400;500;600;700&display=swap');
+:root{--paper:#F5F7FB;--mist:#EDF1F8;--card:#FFFFFF;--ink:#1F2A44;--slate:#5A6782;--line:#E1E6EF;--peri:#5B6CD6;--peri-tint:#E4E8FB;--peri-deep:#3A47A8;--sage:#4E9A86;--sage-tint:#DFF1EA;--apri:#D9893B;--apri-tint:#FCEBD8;--rose:#D0607A;--rose-tint:#FBE3E8}
+html{background:var(--paper)}
+body{font-family:'Public Sans',system-ui,sans-serif;background:var(--paper);color:var(--ink);font-size:16px}
+h1,h2,h3,.font-extrabold{font-family:'Schibsted Grotesk','Public Sans',sans-serif;letter-spacing:-.01em}
+h1{letter-spacing:-.02em}
+.mono{font-family:'Public Sans',system-ui,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.font-extrabold,.text-2xl,.text-3xl,.text-4xl{font-variant-numeric:tabular-nums}
+.panel{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:0 1px 2px rgba(31,42,68,.04)}
+.grad{color:var(--peri-deep);background:none}
+.reveal{opacity:1;transform:none}
+.tab{padding:.6rem 1rem;border-radius:.75rem;font-size:.85rem;font-weight:600;color:var(--slate);border:1px solid var(--line);background:var(--card);cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.tab:hover{color:var(--ink);border-color:#C9D1E0}
+.tab.active{background:var(--peri-tint);color:var(--peri-deep);border-color:#B9C2F0}
+.chip{padding:.4rem .8rem;border-radius:999px;font-size:.75rem;border:1px solid var(--line);color:var(--slate);cursor:pointer;transition:background .15s,color .15s,border-color .15s;background:var(--card)}
+.chip:hover,.chip.active{border-color:#B9C2F0;color:var(--peri-deep);background:var(--peri-tint)}
+input[type=range]{accent-color:var(--peri);width:100%}
+input[type=text],#chatIn{color:var(--ink)}
+.msg-user{background:var(--peri);color:#fff;border-radius:1rem 1rem .25rem 1rem}
+.msg-bot{background:var(--paper);border:1px solid var(--line);color:var(--ink);border-radius:1rem 1rem 1rem .25rem}
+.dot{animation:blink 1s infinite}
+@keyframes blink{50%{opacity:.2}}
+.tab{position:relative;transition:background .15s,color .15s,border-color .15s,transform .15s,box-shadow .15s}
+.tab:not(.active):hover{transform:translateY(-2px);border-color:#9AA6EA;color:var(--peri-deep);box-shadow:0 6px 14px rgba(91,108,214,.14)}
+.tab:active{transform:translateY(0)}
+@keyframes tabNudge{0%,100%{transform:none;box-shadow:0 0 0 0 rgba(91,108,214,0);border-color:var(--line)}35%{transform:translateY(-3px);box-shadow:0 0 0 6px rgba(91,108,214,.18);border-color:#9AA6EA;color:var(--peri-deep)}}
+.tab.nudge{animation:tabNudge 1.3s ease-in-out}
+@keyframes tapHint{0%,60%,100%{transform:translate(0,0) scale(1)}30%{transform:translate(2px,2px) scale(.88)}}
+#tabHint svg{animation:tapHint 1.6s ease-in-out infinite;transform-origin:30% 30%}
+#tabHint{transition:opacity .3s,height .3s,margin .3s}
+#tabHint.gone{opacity:0;height:0;margin:0;overflow:hidden}
+a:focus-visible,button:focus-visible,input:focus-visible,summary:focus-visible{outline:2px solid var(--peri);outline-offset:2px}
+::-webkit-scrollbar{width:8px;height:8px}::-webkit-scrollbar-thumb{background:#CBD3E1;border-radius:8px}
+details summary{cursor:pointer;list-style:none}
+details summary::-webkit-details-marker{display:none}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+@media print{nav,.no-print{display:none}}
+</style>
 </head>
-<body class="antialiased selection:bg-cyan-500 selection:text-black">
+<body class="antialiased selection:bg-[#E4E8FB] selection:text-ink">
 
-    <!-- NAVIGATION BAR -->
-    <nav class="fixed top-0 left-0 right-0 z-50 glass-panel border-b border-gray-800">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="flex items-center space-x-3">
-                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-cyan-500 to-emerald-400 flex items-center justify-center text-black font-extrabold text-lg shadow-lg">
-                    PB
-                </div>
-                <div>
-                    <span class="font-bold text-lg tracking-tight block text-white">Puneet Bajaj</span>
-                    <span class="text-xs text-cyan-400 font-medium tracking-wide">Strategic Finance & AI Transformation</span>
-                </div>
-            </div>
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-300">
-                <a href="#about" class="hover:text-cyan-400 transition-colors">About</a>
-                <a href="#impact" class="hover:text-cyan-400 transition-colors">AI & Analytics Impact</a>
-                <a href="#journey" class="hover:text-cyan-400 transition-colors">Career Journey</a>
-                <a href="#achievements" class="hover:text-cyan-400 transition-colors">Signature Projects</a>
-                <a href="#skills" class="hover:text-cyan-400 transition-colors">Expertise</a>
-            </div>
-            <div>
-                <a href="mailto:bajajpuneetbajaj@gmail.com" class="bg-gradient-to-r from-cyan-500 to-emerald-400 text-black font-bold px-5 py-2.5 rounded-xl text-sm shadow-lg hover:opacity-90 transition-opacity flex items-center space-x-2">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
-                    <span>Connect with Me</span>
-                </a>
-            </div>
+<!-- NAV -->
+<nav class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-white/90 border-b border-line">
+  <div class="max-w-7xl mx-auto px-5 h-16 flex items-center justify-between">
+    <a href="#top" class="flex items-center gap-3">
+      <div class="w-9 h-9 rounded-lg bg-cy text-white font-extrabold flex items-center justify-center text-sm">PB</div>
+      <div class="leading-tight"><div class="font-bold text-ink text-sm">Puneet Bajaj</div><div class="hidden sm:block text-[11px] text-slate">FP&amp;A Leader · Planning &amp; Forecasting · AI for Finance</div></div>
+    </a>
+    <div class="hidden lg:flex items-center gap-7 text-sm text-slate">
+      <a href="#value" class="hover:text-cyd">What I Do</a>
+      <a href="#lab" class="hover:text-cyd">Interactive Lab</a>
+      <a href="#skills" class="hover:text-cyd">Skills</a>
+      <a href="#journey" class="hover:text-cyd">Experience</a>
+      <a href="#plan" class="hover:text-cyd">First 90 Days</a>
+      <a href="#contact" class="hover:text-cyd">Contact</a>
+    </div>
+    <a href="#contact" class="inline-flex items-center justify-center gap-2 h-10 px-4 rounded-xl bg-cy text-white font-bold text-sm leading-none whitespace-nowrap hover:bg-cyd transition"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4" aria-hidden="true"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/><path d="m9 16 2 2 4-4"/></svg><span class="hidden sm:inline">Let's Talk</span></a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="top" class="relative pt-28 pb-12 px-5 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-12 gap-10 items-center relative">
+    <div class="lg:col-span-7 space-y-6">
+      <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-2xl sm:rounded-full border border-em/40 bg-em/10 text-em text-xs font-semibold">
+        <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-em opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-em"></span></span>
+        Available now for FP&amp;A leadership roles
+      </div>
+      <h1 class="text-4xl sm:text-5xl xl:text-6xl font-extrabold text-ink leading-[1.08] tracking-tight">
+        I own the plan, sharpen the forecast and <span class="grad">turn the numbers into decisions the CFO can act on.</span>
+      </h1>
+      <p class="text-lg text-slate max-w-2xl leading-relaxed">
+        FP&amp;A leader with 19+ years at Agilent Technologies and American Express. I've owned the annual operating plan, rolling forecasts, long-range plan and monthly CFO reporting for a $7B global business across the Americas and Europe, partnering with the CFO's staff and business-unit leaders to explain what's driving the numbers and what to do next. I also set up and led the FP&amp;A, Analytics &amp; Transformation pillar of Agilent's India Finance CoE, bringing driver-based models, AI/ML forecasting and automation to everyday planning.
+      </p>
+      <div class="flex flex-wrap gap-3">
+        <a href="#lab" class="inline-flex items-center justify-center gap-2 h-12 px-6 w-full sm:w-auto rounded-xl bg-cy text-white font-bold text-sm leading-none whitespace-nowrap hover:bg-cyd transition">Try the Interactive Lab <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4" aria-hidden="true"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg></a>
+        <a href="mailto:bajajpuneetbajaj@gmail.com?subject=Opportunity%20for%20Puneet%20Bajaj" class="panel inline-flex items-center justify-center gap-2 h-12 px-6 w-full sm:w-auto !rounded-xl text-sm font-semibold text-ink leading-none whitespace-nowrap hover:border-cy transition"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4 text-cyd" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg> Email Me</a>
+        <button onclick="window.print()" class="no-print panel inline-flex items-center justify-center gap-2 h-12 px-6 w-full sm:w-auto !rounded-xl text-sm font-semibold text-ink leading-none whitespace-nowrap hover:border-cy transition"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4 text-cyd" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg> Save as PDF</button>
+      </div>
+      <div class="flex flex-wrap items-center gap-2 pt-2 text-xs text-slate">
+        <span class="mono text-slate/80 mr-1 w-full sm:w-auto">Roles I'm looking for →</span>
+        <span class="chip" style="cursor:default">Head / Director of FP&amp;A</span>
+        <span class="chip" style="cursor:default">Strategic Finance Business Partner</span>
+        <span class="chip" style="cursor:default">FP&amp;A Transformation &amp; Planning Lead</span>
+        <span class="chip" style="cursor:default">GCC / Finance CoE FP&amp;A Leader</span>
+      </div>
+    </div>
+
+    <div class="lg:col-span-5">
+      <div class="panel p-6 space-y-5">
+        <div class="flex items-center justify-between">
+          <div class="text-xs mono text-slate">profile.summary</div>
+          
         </div>
-    </nav>
-
-    <!-- HERO SECTION -->
-    <header class="pt-32 pb-20 px-6 relative overflow-hidden">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
-            <div class="lg:col-span-7 space-y-6">
-                <div class="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-cyan-500/10 border border-cyan-500/35 text-cyan-400 text-xs font-semibold tracking-wide">
-                    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-                    <span>19+ Years Leading Global FP&A & Digital Finance</span>
-                </div>
-                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                    Scaling Enterprise P&L Visibility Through <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400 glow-text">AI & Strategic FP&A</span>
-                </h1>
-                <p class="text-lg text-gray-300 max-w-2xl leading-relaxed">
-                    Finance leader at Agilent Technologies building enterprise-grade planning systems, AI/ML revenue predictors (95%+ accuracy), and generative AI financial assistants (*Ask Ana*). Turning complex financial data into executive clarity.
-                </p>
-                <div class="flex flex-wrap gap-4 pt-2">
-                    <a href="#impact" class="bg-cyan-500 text-black font-bold px-6 py-3 rounded-xl text-sm hover:bg-cyan-400 transition-all shadow-lg shadow-cyan-500/20 flex items-center space-x-2">
-                        <span>Explore AI Impact Dashboard</span>
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
-                    </a>
-                    <a href="tel:+919711166242" class="glass-panel text-white font-semibold px-6 py-3 rounded-xl text-sm hover:bg-cardHover transition-all border border-gray-700 flex items-center space-x-2">
-                        <i data-lucide="phone" class="w-4 h-4 text-cyan-400"></i>
-                        <span>+91-9711166242</span>
-                    </a>
-                </div>
-                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-gray-800 text-sm">
-                    <div>
-                        <div class="text-2xl font-bold text-white">19+</div>
-                        <div class="text-gray-400 text-xs">Years Experience</div>
-                    </div>
-                    <div>
-                        <div class="text-2xl font-bold text-cyan-400">95%+</div>
-                        <div class="text-gray-400 text-xs">AI Forecast Accuracy</div>
-                    </div>
-                    <div>
-                        <div class="text-2xl font-bold text-emerald-400">Global</div>
-                        <div class="text-gray-400 text-xs">CFO Leadership</div>
-                    </div>
-                </div>
-            </div>
-            <div class="lg:col-span-5">
-                <div class="glass-panel p-6 rounded-3xl glow-box border border-cyan-500/3p relative">
-                    <div class="absolute -top-3 -right-3 bg-emerald-500 text-black text-xs font-extrabold px-3 py-1 rounded-full shadow">
-                        Active Leader
-                    </div>
-                    <h3 class="text-lg font-bold text-white mb-4 flex items-center space-x-2">
-                        <i data-lucide="cpu" class="text-cyan-400 w-5 h-5"></i>
-                        <span>AI & BI Finance Stack Snapshot</span>
-                    </h3>
-                    <div class="space-y-4 text-sm">
-                        <div class="bg-gray-900/80 p-3.5 rounded-xl border border-gray-800">
-                            <div class="text-xs text-cyan-400 font-semibold mb-1">PREDICTIVE MODELING</div>
-                            <div class="text-gray-200">SARIMAX, XGBoost, LightGBM, Prophet & LSTM driving guidance reliability.</div>
-                        </div>
-                        <div class="bg-gray-900/80 p-3.5 rounded-xl border border-gray-800">
-                            <div class="text-xs text-emerald-400 font-semibold mb-1">GENERATIVE AI IN FINANCE</div>
-                            <div class="text-gray-200">Creator of <em>'Ask Ana'</em> – Natural Language P&L query assistant (Agilent Innovates Award).</div>
-                        </div>
-                        <div class="bg-gray-900/80 p-3.5 rounded-xl border border-gray-800">
-                            <div class="text-xs text-cyan-400 font-semibold mb-1">ENTERPRISE ARCHITECTURE</div>
-                            <div class="text-gray-200">Hyperion Essbase, Microsoft Fabric, OneLake, Snowflake, & Advanced Power BI.</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="rounded-xl bg-paper border border-line p-4"><div class="text-3xl font-extrabold text-ink"><span data-count="19">0</span>+</div><div class="text-xs text-slate mt-1">Years in FP&amp;A, from analyst to finance leader</div></div>
+          <div class="rounded-xl bg-paper border border-line p-4"><div class="text-3xl font-extrabold text-cyd"><span data-count="95">0</span>%+</div><div class="text-xs text-slate mt-1">Accuracy of ML forecasts embedded in rolling forecasts</div></div>
+          <div class="rounded-xl bg-paper border border-line p-4"><div class="text-3xl font-extrabold text-em">$<span data-count="7">0</span>B</div><div class="text-xs text-slate mt-1">Business planned and reported to the CFO</div></div>
+          <div class="rounded-xl bg-paper border border-line p-4"><div class="text-3xl font-extrabold text-am"><span data-count="4000">0</span>+</div><div class="text-xs text-slate mt-1">Hours saved a year through FP&amp;A automation</div></div>
         </div>
-    </header>
-
-    <!-- INTERACTIVE CHARTS & AI IMPACT SECTION -->
-    <section id="impact" class="py-20 px-6 bg-gray-950/50 border-t border-b border-gray-900">
-        <div class="max-w-7xl mx-auto space-y-12">
-            <div class="text-center max-w-3xl mx-auto space-y-3">
-                <h2 class="text-3xl font-extrabold text-white">AI-Enabled FP&A: Transforming Financial Performance</h2>
-                <p class="text-gray-400 text-sm">Moving traditional finance from reactive backward-looking monthly reports to proactive, high-precision AI forecasting and real-time operational intelligence.</p>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                <!-- Chart 1: Forecast Accuracy -->
-                <div class="glass-panel p-6 rounded-3xl space-y-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Revenue & Orders Forecast Accuracy</h3>
-                            <p class="text-xs text-gray-400">Traditional Statistical vs. Machine Learning Models (XGBoost, SARIMAX, LSTM)</p>
-                        </div>
-                        <span class="px-2.5 py-1 rounded-lg bg-cyan-500/10 text-cyan-400 text-xs font-bold">+15% Lift</span>
-                    </div>
-                    <div class="relative h-72">
-                        <canvas id="forecastChart"></canvas>
-                    </div>
-                </div>
-
-                <!-- Chart 2: Reporting Cycle Acceleration -->
-                <div class="glass-panel p-6 rounded-3xl space-y-6">
-                    <div class="flex items-center justify-between">
-                        <div>
-                            <h3 class="text-lg font-bold text-white">Financial Close & Reporting Cycle Impact</h3>
-                            <p class="text-xs text-gray-400">Reduction in manual reconciliation hours through Microsoft Fabric & RPA</p>
-                        </div>
-                        <span class="px-2.5 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 text-xs font-bold">Automation First</span>
-                    </div>
-                    <div class="relative h-72">
-                        <canvas id="efficiencyChart"></canvas>
-                    </div>
-                </div>
-            </div>
-
-            <!-- AI Capabilities Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-bold">
-                        <i data-lucide="trending-up" class="w-5 h-5"></i>
-                    </div>
-                    <h4 class="font-bold text-white text-base">Guidance Attainment & Revenue Control Tower</h4>
-                    <p class="text-xs text-gray-400 leading-relaxed">Built an always-on intelligence hub monitoring order intake, backlog, blocked orders, and at-risk deals with embedded AI risk scoring.</p>
-                </div>
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 font-bold">
-                        <i data-lucide="message-square" class="w-5 h-5"></i>
-                    </div>
-                    <h4 class="font-bold text-white text-base">'Ask Ana' GenAI Financial Assistant</h4>
-                    <p class="text-xs text-gray-400 leading-relaxed">Enabled natural language queries across P&L, gross margin, variance drivers, and forecast plans, eliminating manual report pulling for executives.</p>
-                </div>
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-3">
-                    <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-400 font-bold">
-                        <i data-lucide="layers" class="w-5 h-5"></i>
-                    </div>
-                    <h4 class="font-bold text-white text-base">Headcount Affordability & P&L Modeling</h4>
-                    <p class="text-xs text-gray-400 leading-relaxed">Engineered integrated workforce models linking headcount cost drivers directly with P&L guardrails and margin targets.</p>
-                </div>
-            </div>
+        <div class="text-xs text-slate leading-relaxed border-t border-line pt-4">
+          <span class="text-ink font-semibold">Toolkit:</span> AOP / SPR · rolling forecasts · LRP · driver-based scenario and headcount models · Hyperion Essbase, HFM · SAP S/4HANA, CO-PA · Anaplan, Oracle EPM Cloud, SAP Analytics Cloud (PoCs) · Power BI · Microsoft Fabric · Snowflake · Python ML · GenAI
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</header>
 
-    <!-- CAREER JOURNEY TIMELINE -->
-    <section id="journey" class="py-20 px-6 max-w-7xl mx-auto">
-        <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
-            <h2 class="text-3xl font-extrabold text-white">Professional Journey at Agilent Technologies</h2>
-              <p class="text-gray-400 text-sm">19+ years of progressive leadership spanning finance systems, planning architecture, and digital transformation.</p>
+<!-- VALUE -->
+<section id="value" class="py-16 px-5 border-t border-line">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-3xl mb-12 reveal">
+      <div class="mono text-xs text-cyd mb-2">WHAT I BRING TO YOUR FP&amp;A TEAM</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-ink">Three ways I make an FP&amp;A function better</h2>
+    </div>
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="panel p-7 reveal flex flex-col gap-4 hover:border-cy/50 transition">
+        <div class="flex items-center gap-3"><div class="w-10 h-10 shrink-0 rounded-xl bg-[#E4E8FB] text-cyd flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-5 h-5" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+        <h3 class="text-lg font-bold text-ink leading-snug">Plans and forecasts leadership can trust</h3></div>
+        <p class="text-sm text-slate leading-relaxed">I led the AOP / SPR, rolling forecasts and long-range plan for a $7B business, consolidating business-unit, regional and cost-centre inputs into one outlook for CFO review. ML revenue and orders forecasts above 95% accuracy feed the rolling forecast and guidance, and a Revenue Control Tower shows orders, backlog and at-risk deals daily.</p>
+        <div class="flex flex-wrap gap-2 mt-auto"><span class="chip">AOP · RF · LRP</span><span class="chip">95%+ forecast accuracy</span></div>
+      </div>
+      <div class="panel p-7 reveal flex flex-col gap-4 hover:border-em/50 transition">
+        <div class="flex items-center gap-3"><div class="w-10 h-10 shrink-0 rounded-xl bg-[#DFF1EA] text-em flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-5 h-5" aria-hidden="true"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg></div>
+        <h3 class="text-lg font-bold text-ink leading-snug">Business partnering that drives decisions</h3></div>
+        <p class="text-sm text-slate leading-relaxed">I run monthly and quarterly forecast and variance reviews with the CFO's staff and business-unit leaders, explaining revenue, margin, currency and price-volume-mix. My headcount-affordability and scenario models guided resource allocation and hiring, and my model behind an enterprise operating-margin program won a 2019 Agilent Global Innovates Award.</p>
+        <div class="flex flex-wrap gap-2 mt-auto"><span class="chip">Variance &amp; PVM</span><span class="chip">Scenario models</span><span class="chip">Margin improvement</span></div>
+      </div>
+      <div class="panel p-7 reveal flex flex-col gap-4 hover:border-am/50 transition">
+        <div class="flex items-center gap-3"><div class="w-10 h-10 shrink-0 rounded-xl bg-[#FCEBD8] text-am flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-5 h-5" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg></div>
+        <h3 class="text-lg font-bold text-ink leading-snug">Faster, automated, AI-ready FP&amp;A</h3></div>
+        <p class="text-sm text-slate leading-relaxed">Automation and RPA saved 4,000+ hours a year. I set up the planning system on Hyperion Essbase with automated SAP data loads, built <em>Ask Ana</em>, a GenAI finance assistant (2022 Agilent India Innovates Award), and rolled out tools used by ~500 finance and business users.</p>
+        <div class="flex flex-wrap gap-2 mt-auto"><span class="chip">4,000+ hours saved</span><span class="chip">GenAI for FP&amp;A</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LAB -->
+<section id="lab" class="py-16 px-5 bg-mist border-y border-line">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-3xl mb-8 reveal">
+      <div class="mono text-xs text-cyd mb-2">INTERACTIVE LAB</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-ink">Don't just read it. Try how I think.</h2>
+      <p class="text-slate mt-3 text-sm">Four working demos that run live in your browser. They use <span class="text-ink font-semibold">synthetic, illustrative data</span> (no company information) to show how I combine financial reasoning with ML and analytics.</p>
+    </div>
+
+    <div id="tabHint" class="flex items-center gap-2 mb-3 text-sm font-semibold text-cyd"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 shrink-0" aria-hidden="true"><path d="M14 4.1 12 6"/><path d="m5.1 8-2.9-.8"/><path d="m6 12-1.9 2"/><path d="M7.2 2.2 8 5.1"/><path d="M9.037 9.69a.498.498 0 0 1 .653-.653l11 4.5a.5.5 0 0 1-.074.949l-4.349 1.041a1 1 0 0 0-.74.739l-1.04 4.35a.5.5 0 0 1-.95.074z"/></svg>Click any tab below to switch between the four live demos</div>
+    <div class="flex flex-wrap gap-2 mb-6" id="tabs">
+      <button class="tab active" data-tab="t1"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 inline-block w-4 h-4 mr-1.5 -mt-0.5 align-middle" aria-hidden="true"><path d="M3 3v16a2 2 0 0 0 2 2h16"/><path d="m19 9-5 5-4-4-3 3"/></svg>1 · Forecast Lab</button>
+      <button class="tab" data-tab="t2"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 inline-block w-4 h-4 mr-1.5 -mt-0.5 align-middle" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>2 · Ask Ana (GenAI demo)</button>
+      <button class="tab" data-tab="t3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 inline-block w-4 h-4 mr-1.5 -mt-0.5 align-middle" aria-hidden="true"><rect width="16" height="20" x="4" y="2" rx="2"/><line x1="8" x2="16" y1="6" y2="6"/><line x1="16" x2="16" y1="14" y2="18"/><path d="M16 10h.01"/><path d="M12 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M8 14h.01"/><path d="M12 18h.01"/><path d="M8 18h.01"/></svg>3 · Margin Bridge & Headcount Affordability</button>
+      <button class="tab" data-tab="t4"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 inline-block w-4 h-4 mr-1.5 -mt-0.5 align-middle" aria-hidden="true"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>4 · Month Tracker (CFO Control Tower)</button>
+    </div>
+
+    <!-- TAB 1 -->
+    <div id="t1" class="tabpane">
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="panel p-6 lg:col-span-2">
+          <div class="flex items-start justify-between gap-3 mb-4">
+            <div><h3 class="font-bold text-ink">Backtest a revenue forecast</h3><p class="text-xs text-slate">Train on history, forecast the hold-out, score against actuals (MAPE → accuracy).</p></div>
+            <span class="mono text-[11px] px-2 py-1 rounded bg-am/10 text-am border border-am/30">synthetic data</span>
+          </div>
+          <div class="relative h-80"><canvas id="fcChart"></canvas></div>
         </div>
-
-        <div class="relative border-l border-cyan-500/30 ml-4 md:ml-32 space-y-12">
-            <!-- Role 1 -->
-            <div class="relative pl-8 md:pl-12 group">
-                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-cyan-500 text-black font-bold flex items-center justify-center text-xs shadow-lg">01</div>
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-3">
-                    <div class="flex flex-wrap items-center justify-between gap-2">
-                        <h3 class="text-lg font-bold text-white">Finance Leader - FP&A, Planning Systems & Digital Finance</h3>
-                        <span class="text-xs px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 font-semibold">May 2025 - Present</span>
-                    </div>
-                    <div class="text-sm text-cyan-400 font-medium">Agilent Technologies</div>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        Leading global FP&A teams delivering financial intelligence to the CFO. Owns Hyperion Essbase planning architecture, CFO Management Reporting Package (WD7/WD8), and the Revenue Control Tower. Spearheading the Ignite Finance Transformation program.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Role 2 -->
-            <div class="relative pl-8 md:pl-12 group">
-                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-emerald-500 text-black font-bold flex items-center justify-center text-xs shadow-lg">02</div>
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-3">
-                    <div class="flex flex-wrap items-center justify-between gap-2">
-                        <h3 class="text-lg font-bold text-white">Manager II - FP&A, Business Intelligence & Finance Systems</h3>
-                        <span class="text-xs px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 font-semibold">Nov 2020 - May 2025</span>
-                    </div>
-                    <div class="text-sm text-emerald-400 font-medium">Agilent Technologies</div>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        Managed consolidated management P&L reporting, rolling forecasts, annual planning (SPR), and Long-Range Planning (LRP). Built enterprise headcount affordability models and deployed AI/ML models achieving 95%+ forecast accuracy. Winner of 2022 & 2023 Global Innovates Awards.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Role 3 -->
-            <div class="relative pl-8 md:pl-12 group">
-                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-cyan-500 text-black font-bold flex items-center justify-center text-xs shadow-lg">03</div>
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-3">
-                    <div class="flex flex-wrap items-center justify-between gap-2">
-                        <h3 class="text-lg font-bold text-white">Manager I - Analytics & Business Intelligence</h3>
-                        <span class="text-xs px-3 py-1 rounded-full bg-cyan-500/10 text-cyan-400 font-semibold">Jan 2015 - Oct 2020</span>
-                    </div>
-                    <div class="text-sm text-cyan-400 font-medium">Agilent Technologies</div>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        Transitioned finance teams from manual spreadsheet reporting to real-time self-service dashboards using TIBCO Spotfire, Qlik, and Power BI. Developed product profitability analytics and automated SAP CO-PA data pipelines.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Role 4 -->
-            <div class="relative pl-8 md:pl-12 group">
-                <div class="absolute -left-[17px] top-1.5 w-8 h-8 rounded-full bg-gray-700 text-white font-bold flex items-center justify-center text-xs shadow-lg">04</div>
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-3">
-                    <div class="flex flex-wrap items-center justify-between gap-2">
-                        <h3 class="text-lg font-bold text-white">Lead & Senior Financial Analyst Roles (Agilent, Amex, Paras)</h3>
-                        <span class="text-xs px-3 py-1 rounded-full bg-gray-800 text-gray-300 font-semibold">2005 - 2015</span>
-                    </div>
-                    <div class="text-sm text-gray-400 font-medium">Foundational Finance & Accounting Experience</div>
-                    <p class="text-xs text-gray-300 leading-relaxed">
-                        Administered Hyperion Essbase planning applications, automated banking reconciliations with VBA macros, and received the 2015 CFO Club Award and 2013 Pan-India Employee of the Year recognition.
-                    </p>
-                </div>
-            </div>
+        <div class="panel p-6 space-y-5">
+          <div>
+            <div class="text-xs text-slate mb-2">Model</div>
+            <div class="flex flex-wrap gap-2" id="modelChips"></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs text-slate"><span>Forecast horizon</span><span class="mono text-cyd" id="hVal">6 months</span></div>
+            <input type="range" id="hor" min="3" max="12" value="6">
+          </div>
+          <div>
+            <div class="flex justify-between text-xs text-slate"><span>Data noise (volatility)</span><span class="mono text-cyd" id="nVal">Medium</span></div>
+            <input type="range" id="noise" min="1" max="3" value="2">
+          </div>
+          <div class="rounded-xl bg-paper border border-line p-4 text-center">
+            <div class="text-xs text-slate">Selected model accuracy</div>
+            <div class="text-4xl font-extrabold grad" id="accOut">--</div>
+            <div class="text-xs text-slate/80 mono" id="mapeOut"></div>
+          </div>
+          <div>
+            <div class="text-xs text-slate mb-2">Leaderboard (live)</div>
+            <div id="board" class="space-y-2"></div>
+          </div>
         </div>
-    </section>
+      </div>
+      <p class="text-xs text-slate/80 mt-3">Demo uses lightweight in-browser models. In production I use XGBoost, LightGBM, SARIMAX, Prophet and LSTM in Python, with driver-based features (backlog, pipeline, seasonality, FX) and finance review of every forecast.</p>
+    </div>
 
-    <!-- SIGNATURE ACHIEVEMENTS -->
-    <section id="achievements" class="py-20 px-6 bg-gray-950/50 border-t border-gray-900">
-        <div class="max-w-7xl mx-auto space-y-12">
-            <div class="text-center max-w-3xl mx-auto space-y-3">
-                <h2 class="text-3xl font-extrabold text-white">Signature Awards & Recognition</h2>
-                <p class="text-gray-400 text-sm">Validated excellence across global finance leadership, technological innovation, and operational impact.</p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <div class="glass-panel p-6 rounded-2xl border border-cyan-500/20 space-y-4 hover:border-cyan-500/50 transition-all">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs text-cyan-400 font-bold">2023</span>
-                        <i data-lucide="award" class="text-cyan-400 w-5 h-5"></i>
-                    </div>
-                    <h4 class="font-bold text-white text-base">Agilent Innovates Worldwide Group Award</h4>
-                    <p class="text-xs text-gray-400 leading-relaxed">Recognized globally for pioneering digital finance automation and advanced predictive forecasting architectures.</p>
-                </div>
-
-                <div class="glass-panel p-6 rounded-2xl border border-emerald-500/20 space-y-4 hover:border-emerald-500/50 transition-all">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs text-emerald-400 font-bold">2022</span>
-                        <i data-lucide="sparkles" class="text-emerald-400 w-5 h-5"></i>
-                    </div>
-                    <h4 class="font-bold text-white text-base">Agilent India Innovates Award</h4>
-                    <p class="text-xs text-gray-400 leading-relaxed">Awarded for <em>'Ask Ana'</em> – Generative AI Financial Chatbot enabling instant natural language P&L queries.</p>
-                </div>
-
-                <div class="glass-panel p-6 rounded-2xl border border-cyan-500/20 space-y-4 hover:border-cyan-500/50 transition-all">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs text-cyan-400 font-bold">2019</span>
-                        <i data-lucide="trending-up" class="text-cyan-400 w-5 h-5"></i>
-                    </div>
-                    <h4 class="font-bold text-white text-base">Agilent Global Innovates Award</h4>
-                    <p class="text-xs text-gray-400 leading-relaxed">Delivered enterprise financial modeling directly supporting operating margin improvement.</p>
-                </div>
-
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-4 hover:border-gray-700 transition-all">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs text-gray-400 font-bold">2015</span>
-                        <i data-lucide="shield-check" class="text-gray-400 w-5 h-5"></i>
-                    </div>
-                    <h4 class="font-bold text-white text-base">CFO Club Award</h4>
-                    <p class="text-xs text-gray-400 leading-relaxed">Agilent's premier global finance recognition for excellence in management reporting transformation.</p>
-                </div>
-
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-4 hover:border-gray-700 transition-all">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs text-gray-400 font-bold">2013</span>
-                        <i data-lucide="user-check" class="text-gray-400 w-5 h-5"></i>
-                    </div>
-                    <h4 class="font-bold text-white text-base">Employee of the Year</h4>
-                    <p class="text-xs text-gray-400 leading-relaxed">Pan-India corporate recognition for exceptional functional leadership and delivery.</p>
-                </div>
-
-                <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-4 hover:border-gray-700 transition-all">
-                    <div class="flex items-center justify-between">
-                        <span class="text-xs text-gray-400 font-bold">2007 & 2006</span>
-                        <i data-lucide="star" class="text-gray-400 w-5 h-5"></i>
-                    </div>
-                    <h4 class="font-bold text-white text-base">STAR & Functional Excellence Awards</h4>
-                    <p class="text-xs text-gray-400 leading-relaxed">Recognized at Agilent and American Express for procurement reconciliation and financial accuracy.</p>
-                </div>
-            </div>
+    <!-- TAB 2 -->
+    <div id="t2" class="tabpane hidden">
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="panel p-0 lg:col-span-2 flex flex-col h-[520px]">
+          <div class="px-5 py-4 border-b border-line flex items-center justify-between">
+            <div class="flex items-center gap-3"><div class="w-9 h-9 rounded-full bg-cy text-white font-bold flex items-center justify-center">A</div><div><div class="text-ink font-semibold text-sm">Ask Ana</div><div class="text-[11px] text-em">● demo mode · sample P&L</div></div></div>
+            <span class="mono text-[11px] px-2 py-1 rounded bg-am/10 text-am border border-am/30">synthetic data</span>
+          </div>
+          <div id="chat" class="flex-1 overflow-y-auto p-5 space-y-4 text-sm"></div>
+          <form id="chatForm" class="p-4 border-t border-line flex gap-2">
+            <input id="chatIn" autocomplete="off" placeholder="Ask e.g. “Why did gross margin miss plan in Q3?”" class="flex-1 bg-paper border border-line rounded-xl px-4 py-3 text-sm text-ink outline-none focus:border-cy">
+            <button class="bg-cy text-white font-bold rounded-xl px-5 text-sm hover:bg-cyd">Ask</button>
+          </form>
         </div>
-    </section>
-
-    <!-- TECHNICAL & FINANCE SKILLS -->
-    <section id="skills" class="py-20 px-6 max-w-7xl mx-auto space-y-12">
-        <div class="text-center max-w-3xl mx-auto space-y-3">
-            <h2 class="text-3xl font-extrabold text-white">Technology & Domain Expertise</h2>
-            <p class="text-gray-400 text-sm">Combining rigorous accounting and financial planning foundations with modern data engineering and AI capabilities.</p>
+        <div class="panel p-6 space-y-4">
+          <h3 class="font-bold text-ink">Try these</h3>
+          <div class="flex flex-col gap-2" id="suggest"></div>
+          <div class="text-xs text-slate leading-relaxed border-t border-line pt-4">
+            The real <em>Ask Ana</em> connects natural-language questions to governed P&L, margin, variance and forecast data. This demo shows the experience with a small synthetic dataset and rule-based intent matching. No company data is shown here.
+          </div>
         </div>
+      </div>
+    </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-4">
-                <div class="text-cyan-400 font-bold text-sm flex items-center space-x-2">
-                    <i data-lucide="cpu" class="w-4 h-4"></i>
-                    <span>AI & Machine Learning</span>
-                </div>
-                <div class="flex flex-wrap gap-2 text-xs">
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">Python</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">XGBoost</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">LightGBM</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">SARIMAX</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">LSTM / Prophet</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">GenAI Chatbots</span>
-                </div>
-            </div>
-
-            <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-4">
-                <div class="text-emerald-400 font-bold text-sm flex items-center space-x-2">
-                    <i data-lucide="pie-chart" class="w-4 h-4"></i>
-                    <span>Planning Systems & FP&A</span>
-                </div>
-                <div class="flex flex-wrap gap-2 text-xs">
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">Hyperion Essbase</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">Oracle DRM / MDM</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">HFM</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">Anaplan (PoC)</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">Oracle EPM</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">SAP Analytics Cloud</span>
-                </div>
-            </div>
-
-            <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-4">
-                <div class="text-cyan-400 font-bold text-sm flex items-center space-x-2">
-                    <i data-lucide="bar-chart-2" class="w-4 h-4"></i>
-                    <span>BI & Enterprise Data</span>
-                </div>
-                <div class="flex flex-wrap gap-2 text-xs">
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">Microsoft Fabric</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">Power BI (Adv. DAX)</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">Snowflake</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">TIBCO Spotfire</span>
-                    <span class="px-2.5 py-1 rounded-lg bg-gray-900 border border-gray-800 text-gray-300">SAP S/4HANA CO-PA</span>
-                </div>
-            </div>
-
-            <div class="glass-panel p-6 rounded-2xl border border-gray-800 space-y-4">
-                <div class="text-emerald-400 font-bold text-sm flex items-center space-x-2">
-                    <i data-lucide="book-open" class="w-4 h-4"></i>
-                    <span>Education & Credentials</span>
-                </div>
-                <div class="space-y-1 text-xs text-gray-300">
-                    <div>• MBA (Finance) - AIMA</div>
-                    <div>• M.Com & B.Com - Delhi Univ.</div>
-                    <div>• Taxation and Corporate Law</div>
-                    <div>• PGDIBO (Intl. Business)</div>
-                    <div>• Advanced Diploma in Software Tech.</div>
-                </div>
-            </div>
+    <!-- TAB 3 -->
+    <div id="t3" class="tabpane hidden">
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="panel p-6 space-y-5">
+          <div class="flex items-center justify-between"><h3 class="font-bold text-ink">Scenario drivers</h3><span class="mono text-[11px] px-2 py-1 rounded bg-am/10 text-am border border-am/30">illustrative</span></div>
+          <div><div class="flex justify-between text-xs text-slate"><span>Annual revenue plan</span><span class="mono text-cyd" id="rVal"></span></div><input type="range" id="rev" min="500" max="2000" step="50" value="1000"></div>
+          <div><div class="flex justify-between text-xs text-slate"><span>Gross margin %</span><span class="mono text-cyd" id="gmVal"></span></div><input type="range" id="gm" min="40" max="70" step="0.5" value="55"></div>
+          <div><div class="flex justify-between text-xs text-slate"><span>Current opex % of revenue</span><span class="mono text-cyd" id="oxVal"></span></div><input type="range" id="ox" min="20" max="50" step="0.5" value="32"></div>
+          <div><div class="flex justify-between text-xs text-slate"><span>Target operating margin %</span><span class="mono text-cyd" id="tmVal"></span></div><input type="range" id="tm" min="10" max="35" step="0.5" value="22"></div>
+          <div><div class="flex justify-between text-xs text-slate"><span>Loaded cost per head ($K)</span><span class="mono text-cyd" id="lcVal"></span></div><input type="range" id="lc" min="40" max="200" step="5" value="95"></div>
+          <hr class="border-line">
+          <div class="text-xs text-slate font-semibold">Variance levers vs plan (% of revenue)</div>
+          <div><div class="flex justify-between text-xs text-slate"><span>Price</span><span class="mono text-cyd" id="pVal"></span></div><input type="range" id="pr" min="-3" max="3" step="0.25" value="1"></div>
+          <div><div class="flex justify-between text-xs text-slate"><span>Volume</span><span class="mono text-cyd" id="vVal"></span></div><input type="range" id="vo" min="-5" max="5" step="0.25" value="-1.5"></div>
+          <div><div class="flex justify-between text-xs text-slate"><span>FX</span><span class="mono text-cyd" id="fVal"></span></div><input type="range" id="fx" min="-3" max="3" step="0.25" value="-0.75"></div>
         </div>
-    </section>
-
-    <!-- FOOTER / CALL TO ACTION -->
-    <footer class="py-16 px-6 bg-gray-950 border-t border-gray-900 text-center">
-        <div class="max-w-4xl mx-auto space-y-6">
-            <h2 class="text-2xl font-bold text-white">Ready to Elevate Your Finance & AI Transformation?</h2>
-            <p class="text-gray-400 text-sm max-w-xl mx-auto">Let's discuss how my 19+ years of FP&A leadership, predictive modeling, and digital transformation can drive enterprise value for your organization.</p>
-            <div class="flex flex-wrap justify-center gap-4 pt-4">
-                <a href="mailto:bajajpuneetbajaj@gmail.com" class="bg-cyan-500 text-black font-bold px-6 py-3 rounded-xl text-sm hover:bg-cyan-400 transition-all flex items-center space-x-2">
-                    <i data-lucide="mail" class="w-4 h-4"></i>
-                    <span>bajajpuneetbajaj@gmail.com</span>
-                </a>
-                <a href="tel:+919711166242" class="glass-panel text-white font-semibold px-6 py-3 rounded-xl text-sm hover:bg-cardHover transition-all border border-gray-700 flex items-center space-x-2">
-                    <i data-lucide="phone" class="w-4 h-4 text-cyan-400"></i>
-                    <span>+91-9711166242</span>
-                </a>
-                <a href="https://linkedin.com" target="_blank" class="glass-panel text-white font-semibold px-6 py-3 rounded-xl text-sm hover:bg-cardHover transition-all border border-gray-700 flex items-center space-x-2">
-                    <i data-lucide="linkedin" class="w-4 h-4 text-cyan-400"></i>
-                    <span>LinkedIn Profile</span>
-                </a>
-            </div>
-            <div class="text-xs text-gray-500 pt-8">
-                © 2026 Puneet Bajaj. All rights reserved. Strategic Finance & FP&A Leader.
-            </div>
+        <div class="lg:col-span-2 space-y-6">
+          <div class="grid sm:grid-cols-3 gap-4" id="kpiRow"></div>
+          <div class="panel p-6">
+            <h3 class="font-bold text-ink mb-1">Operating income bridge: Plan → Outlook</h3>
+            <p class="text-xs text-slate mb-3">Price, volume, FX and opex levers walk plan operating income to outlook, the way I frame variance for the CFO.</p>
+            <div class="relative h-72"><canvas id="bridgeChart"></canvas></div>
+          </div>
+          <div class="panel p-5 text-sm text-slate leading-relaxed" id="insight"></div>
         </div>
-    </footer>
+      </div>
+    </div>
+    <!-- TAB 4 -->
+    <div id="t4" class="tabpane hidden">
+      <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+        <div>
+          <h3 class="font-bold text-ink text-lg">Daily Month-Progress Tracker: Orders · Revenue · Shipments · Backlog vs Daily Forecast</h3>
+          <p class="text-xs text-slate">Move the day slider to replay the month. Click a metric card to switch the chart. Insights regenerate for every day.</p>
+        </div>
+        <span class="mono text-[11px] px-2 py-1 rounded bg-am/10 text-am border border-am/30">synthetic data · $M</span>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6" id="ctKpis"></div>
+      <div class="grid lg:grid-cols-3 gap-6">
+        <div class="panel p-6 lg:col-span-2">
+          <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <div class="text-ink font-semibold text-sm" id="ctTitle"></div>
+            <div class="flex gap-2" id="ctViewChips">
+              <button class="chip active" data-v="cum">Cumulative (MTD)</button>
+              <button class="chip" data-v="day">Daily</button>
+            </div>
+          </div>
+          <div class="relative h-80"><canvas id="ctChart"></canvas></div>
+          <div class="mt-5">
+            <div class="text-xs text-slate mb-2" id="ctHeatTitle"></div>
+            <div id="ctHeat" class="flex gap-1"></div>
+            <div class="flex flex-wrap gap-3 text-[11px] text-slate/80 mt-2">
+              <span><span class="inline-block w-2.5 h-2.5 rounded-sm align-middle" style="background:#4E9A86"></span> ahead of forecast</span>
+              <span><span class="inline-block w-2.5 h-2.5 rounded-sm align-middle" style="background:#D9893B"></span> within ±2%</span>
+              <span><span class="inline-block w-2.5 h-2.5 rounded-sm align-middle" style="background:#D0607A"></span> behind forecast</span>
+            </div>
+          </div>
+        </div>
+        <div class="panel p-6 space-y-5">
+          <h3 class="font-bold text-ink">Controls</h3>
+          <div>
+            <div class="flex justify-between text-xs text-slate"><span>Month progress</span><span class="mono text-cyd" id="ctDayVal"></span></div>
+            <input type="range" id="ctDay" min="1" max="22" value="14">
+            <div class="h-1.5 bg-paper rounded mt-2"><div class="h-1.5 rounded bg-cy" id="ctBar"></div></div>
+          </div>
+          <div>
+            <div class="flex justify-between text-xs text-slate"><span>Recovery lever: expedite remaining shipments & revenue</span><span class="mono text-cyd" id="ctExpVal"></span></div>
+            <input type="range" id="ctExp" min="0" max="15" step="1" value="0">
+          </div>
+          <div class="text-xs text-slate leading-relaxed border-t border-line pt-4">
+            <span class="text-ink font-semibold">How the landing is projected:</span> month-to-date pacing vs forecast is applied to the remaining forecast days, then adjusted by the recovery lever. Backlog = opening backlog + orders − shipments.
+          </div>
+          <button id="ctCopy" class="chip w-full text-center">Copy CFO summary</button>
+        </div>
+      </div>
+      <div class="mt-6">
+        <div class="flex items-center gap-2 mb-3"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4 text-am" aria-hidden="true"><path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .2 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/><path d="M9 18h6"/><path d="M10 22h4"/></svg><h3 class="font-bold text-ink">Actionable insights for today</h3><span class="text-[11px] text-slate/80 mono" id="ctInsTag"></span></div>
+        <div id="ctInsights" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+      </div>
+    </div>
 
-    <!-- JAVASCRIPT FOR CHARTS & LUCIDE ICONS -->
-    <script>
-        // Initialize Lucide Icons
-        lucide.createIcons();
+  </div>
+</section>
 
-        // Chart 1: Forecast Accuracy Comparison
-        const ctxForecast = document.getElementById('forecastChart').getContext('2d');
-        new Chart(ctxForecast, {
-            type: 'bar',
-            data: {
-                labels: ['Q1', 'Q2', 'Q3', 'Q4 (Guidance)'],
-                datasets: [
-                    {
-                        label: 'Traditional Statistical Accuracy (%)',
-                        data: [81, 83, 80, 82],
-                        backgroundColor: 'rgba(55, 65, 81, 0.5)',
-                        borderColor: '#4b5563',
-                        borderWidth: 1,
-                        borderRadius: 6
-                    },
-                    {
-                        label: 'AI/ML Model Accuracy (XGBoost/SARIMAX)',
-                        data: [94, 96, 95, 97],
-                        backgroundColor: 'rgba(6, 182, 212, 0.8)',
-                        borderColor: '#06b6d4',
-                        borderWidth: 1,
-                        borderRadius: 6
-                    }
-                ]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        labels: { color: '#9ca3af', font: { size: 11, family: 'Plus Jakarta Sans' } }
-                    }
-                },
-                scales: {
-                    x: { ticks: { color: '#9ca3af' }, grid: { color: 'rgba(31, 41, 55, 0.5)' } },
-                    y: { min: 70, max: 100, ticks: { color: '#9ca3af' }, grid: { color: 'rgba(31, 41, 55, 0.5)' } }
-                }
-            }
-        });
+<!-- SKILLS -->
+<section id="skills" class="py-16 px-5">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-3xl mb-10 reveal">
+      <div class="mono text-xs text-cyd mb-2">SKILLS MAP</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-ink">Where FP&amp;A and technology meet</h2>
+      <p class="text-slate mt-3 text-sm">Filter by capability. The radar shows self-assessed depth across the areas I work in.</p>
+    </div>
+    <div class="grid lg:grid-cols-5 gap-6">
+      <div class="panel p-6 lg:col-span-2 reveal"><div class="relative h-80"><canvas id="radar"></canvas></div></div>
+      <div class="lg:col-span-3 reveal">
+        <div class="flex flex-wrap gap-2 mb-5" id="skillFilter">
+          <button class="chip active" data-f="all">All</button>
+          <button class="chip" data-f="fpa">FP&amp;A &amp; Planning</button>
+          <button class="chip" data-f="lead">Partnering &amp; Leadership</button>
+          <button class="chip" data-f="ai">AI &amp; Automation</button>
+          <button class="chip" data-f="data">Systems, Data &amp; BI</button>
+        </div>
+        <div id="skillGrid" class="grid sm:grid-cols-2 gap-4"></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        // Chart 2: Reporting Cycle Efficiency
-        const ctxEfficiency = document.getElementById('efficiencyChart').getContext('2d');
-        new Chart(ctxEfficiency, {
-            type: 'line',
-            data: {
-                labels: ['Legacy Manual Close', 'Spotfire BI Integration', 'Power BI + MS Fabric', 'AI Automation & Ask Ana'],
-                datasets: [{
-                    label: 'Manual Hours per Close Cycle',
-                    data: [160, 110, 60, 20],
-                    borderColor: '#10b981',
-                    backgroundColor: 'rgba(16, 185, 129, 0.1)',
-                    borderWidth: 3,
-                    fill: true,
-                    tension: 0.3
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        labels: { color: '#9ca3af', font: { size: 11, family: 'Plus Jakarta Sans' } }
-                    }
-                },
-                scales: {
-                    x: { ticks: { color: '#9ca3af' }, grid: { color: 'rgba(31, 41, 55, 0.5)' } },
-                    y: { ticks: { color: '#9ca3af' }, grid: { color: 'rgba(31, 41, 55, 0.5)' } }
-                }
-            }
-        });
-    </script>
+<!-- JOURNEY -->
+<section id="journey" class="py-16 px-5 bg-mist border-y border-line">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-3xl mb-12 reveal">
+      <div class="mono text-xs text-cyd mb-2">EXPERIENCE</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-ink">19 years in FP&amp;A, from analyst to finance leader</h2>
+      <p class="text-slate mt-3 text-sm">Five progressive roles at Agilent Technologies (~$7B global life sciences, diagnostics and applied chemical markets company), after American Express. Click a role to expand.</p>
+    </div>
+    <div class="space-y-4">
+      <details class="panel p-6 reveal group" open>
+        <summary class="flex flex-wrap items-center justify-between gap-2">
+          <div><div class="text-ink font-bold">Finance Leader – FP&amp;A, Planning Systems, Management Reporting &amp; Digital Finance</div><div class="text-sm text-cyd">Agilent Technologies</div></div>
+          <span class="mono text-xs text-slate">May 2025 – Oct 2026</span>
+        </summary>
+        <ul class="mt-4 space-y-2 text-sm text-slate list-disc pl-5">
+          <li>Led the annual operating plan (AOP / SPR), rolling forecasts and long-range plan for a $7B business, consolidating inputs across business units, regions and cost centres for CFO review.</li>
+          <li>Ran monthly and quarterly forecast and variance reviews with the CFO's staff and business-unit leaders, explaining the drivers behind revenue, margin, currency and price-volume-mix.</li>
+          <li>Owned the monthly CFO management reporting package for the Americas and Europe: actual vs. plan vs. forecast vs. prior year, orders, revenue, margin, organic growth and guidance attainment.</li>
+          <li>Built the Revenue Control Tower on Power BI, Microsoft Fabric and Snowflake, giving leadership daily visibility of orders, shipments, backlog and at-risk deals against guidance.</li>
+          <li>Embedded ML revenue and orders forecasts (above 95% accuracy) into rolling forecasts and guidance.</li>
+          <li>Led the Corporate FP&amp;A, Analytics &amp; Transformation pillar of the India Finance CoE (GCC), with FP&amp;A analysts, analytics specialists and Deloitte and Cognizant consultants serving the Americas and Europe.</li>
+          <li>Led the Ignite Finance Transformation program and PoCs of Oracle EPM Cloud, SAP Analytics Cloud and Anaplan.</li>
+        </ul>
+      </details>
+      <details class="panel p-6 reveal">
+        <summary class="flex flex-wrap items-center justify-between gap-2">
+          <div><div class="text-ink font-bold">Manager II – FP&amp;A, Business Intelligence &amp; Finance Systems</div><div class="text-sm text-em">Agilent Technologies</div></div>
+          <span class="mono text-xs text-slate">Nov 2020 – May 2025</span>
+        </summary>
+        <ul class="mt-4 space-y-2 text-sm text-slate list-disc pl-5">
+          <li>Led a global FP&amp;A and BI team owning close, rolling forecasts, the annual plan and long-range plan for business-unit and CFO leadership.</li>
+          <li>Built an enterprise headcount-affordability model and scenario frameworks quantifying the P&amp;L impact of pricing, volume, currency, cost and hiring decisions.</li>
+          <li>Built cost-allocation, regional contribution-margin and revenue-by-end-market models; led restatements and P&amp;L reclassifications with full audit trails.</li>
+          <li>Built Ask Ana, a generative AI finance assistant answering natural-language questions on P&amp;L, margin, forecast and plan data (2022 Agilent India Innovates Award).</li>
+          <li>Designed executive dashboards in Power BI and Spotfire, and set data-lineage and reconciliation controls across SAP, Essbase and Snowflake.</li>
+        </ul>
+      </details>
+      <details class="panel p-6 reveal">
+        <summary class="flex flex-wrap items-center justify-between gap-2">
+          <div><div class="text-ink font-bold">Manager I – Analytics &amp; Business Intelligence</div><div class="text-sm text-cyd">Agilent Technologies</div></div>
+          <span class="mono text-xs text-slate">Jan 2015 – Oct 2020</span>
+        </summary>
+        <ul class="mt-4 space-y-2 text-sm text-slate list-disc pl-5">
+          <li>Supported strategic planning, budgeting and Integrated Business Planning; built automated data pipelines from SAP CO-PA and Essbase.</li>
+          <li>Built the financial model behind an enterprise operating-margin improvement program (2019 Agilent Global Innovates Award).</li>
+          <li>Moved Finance from spreadsheets to self-service analytics in Power BI, Spotfire and Qlik, with profitability and gross-margin analytics.</li>
+        </ul>
+      </details>
+      <details class="panel p-6 reveal">
+        <summary class="flex flex-wrap items-center justify-between gap-2">
+          <div><div class="text-ink font-bold">Financial Planning, Reporting &amp; Analyst Roles</div><div class="text-sm text-slate">Agilent · American Express · Paras Buildtech</div></div>
+          <span class="mono text-xs text-slate">2005 – 2015</span>
+        </summary>
+        <ul class="mt-4 space-y-2 text-sm text-slate list-disc pl-5">
+          <li>Lead – Financial Reporting &amp; Transformation, Agilent (2012–2015): led reporting transformation and close automation; partnered with business leaders on reporting strategy and budget reviews (2015 CFO Club Award).</li>
+          <li>Financial Planning Analyst – Shared Services, Agilent (2007–2011): managed budgeting, forecasting, close and variance analysis across business units; administered Essbase and DRM.</li>
+          <li>Senior Financial Analyst, American Express (2006–2007): automated foreign-currency cash reconciliations for US International Banking (Functional Excellence Award).</li>
+          <li>Finance Executive, Paras Buildtech (2005–2006): accounting, P&amp;L reporting, budgets and audits across group entities.</li>
+        </ul>
+      </details>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
+      <div class="panel p-5 reveal"><div class="flex justify-between text-xs mb-2"><span class="text-cyd font-bold">2023</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4 text-cyd" aria-hidden="true"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/><circle cx="12" cy="8" r="6"/></svg></div><div class="text-ink font-semibold text-sm">Agilent Innovates – Worldwide Group Award</div></div>
+      <div class="panel p-5 reveal"><div class="flex justify-between text-xs mb-2"><span class="text-em font-bold">2022</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4 text-em" aria-hidden="true"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/><path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/></svg></div><div class="text-ink font-semibold text-sm">Agilent India Innovates Award – Ask Ana</div></div>
+      <div class="panel p-5 reveal"><div class="flex justify-between text-xs mb-2"><span class="text-cyd font-bold">2019</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4 text-cyd" aria-hidden="true"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg></div><div class="text-ink font-semibold text-sm">Agilent Global Innovates Award</div></div>
+      <div class="panel p-5 reveal"><div class="flex justify-between text-xs mb-2"><span class="text-slate font-bold">2015</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4 text-slate" aria-hidden="true"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg></div><div class="text-ink font-semibold text-sm">CFO Club Award</div></div>
+      <div class="panel p-5 reveal"><div class="flex justify-between text-xs mb-2"><span class="text-slate font-bold">2013</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4 text-slate" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg></div><div class="text-ink font-semibold text-sm">Pan-India Employee of the Year</div></div>
+      <div class="panel p-5 reveal"><div class="flex justify-between text-xs mb-2"><span class="text-slate font-bold">2007 · 2006</span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4 text-slate" aria-hidden="true"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg></div><div class="text-ink font-semibold text-sm">STAR & Functional Excellence Awards</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 90 DAYS -->
+<section id="plan" class="py-16 px-5">
+  <div class="max-w-7xl mx-auto">
+    <div class="max-w-3xl mb-10 reveal">
+      <div class="mono text-xs text-cyd mb-2">FIRST 90 DAYS</div>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-ink">How I'd add value from day one</h2>
+    </div>
+    <div class="grid lg:grid-cols-3 gap-6">
+      <div class="panel p-6 reveal"><div class="mono text-cyd text-xs mb-2">DAYS 1–30</div><h3 class="text-ink font-bold mb-3">Learn the business</h3><ul class="text-sm text-slate space-y-2 list-disc pl-5"><li>Learn the P&amp;L drivers, planning calendar and how the AOP and forecasts are built today</li><li>Baseline forecast accuracy, variance packs and the manual effort behind each cycle</li><li>Meet the CFO, business leaders and the team; agree which decisions FP&amp;A must support</li></ul></div>
+      <div class="panel p-6 reveal"><div class="mono text-em text-xs mb-2">DAYS 31–60</div><h3 class="text-ink font-bold mb-3">Quick wins</h3><ul class="text-sm text-slate space-y-2 list-disc pl-5"><li>Sharpen the monthly review pack: clear variance drivers, risks, opportunities and actions</li><li>Automate the highest-effort recurring reports and reconciliations</li><li>Pilot a driver-based or ML forecast alongside the current process</li></ul></div>
+      <div class="panel p-6 reveal"><div class="mono text-am text-xs mb-2">DAYS 61–90</div><h3 class="text-ink font-bold mb-3">Scale &amp; embed</h3><ul class="text-sm text-slate space-y-2 list-disc pl-5"><li>Roll out scenario, headcount and cost models to support resource-allocation decisions</li><li>Agree a planning and forecasting roadmap, with governance and data controls in place</li><li>Build team capability in self-service BI and AI-assisted analysis</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<footer id="contact" class="py-16 px-5 bg-gradient-to-b from-mist to-paper border-t border-line">
+  <div class="max-w-4xl mx-auto text-center space-y-6 reveal">
+    <h2 class="text-3xl sm:text-4xl font-extrabold text-ink">Let's build a sharper FP&amp;A function together</h2>
+    <p class="text-slate max-w-2xl mx-auto text-sm">If you're hiring a Head or Director of FP&amp;A, a strategic finance business partner, or a leader to modernise planning and forecasting, I'd welcome a conversation about where I can contribute.</p>
+    <div class="flex flex-wrap justify-center gap-3">
+      <a href="mailto:bajajpuneetbajaj@gmail.com?subject=Opportunity%20for%20Puneet%20Bajaj" class="inline-flex items-center justify-center gap-2 h-12 px-6 w-full sm:w-auto rounded-xl bg-cy text-white font-bold text-sm leading-none whitespace-nowrap hover:bg-cyd transition"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>bajajpuneetbajaj@gmail.com</a>
+      <a href="tel:+919711166242" class="panel inline-flex items-center justify-center gap-2 h-12 px-6 w-full sm:w-auto !rounded-xl text-sm font-semibold text-ink leading-none whitespace-nowrap hover:border-cy transition"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4 text-cyd" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>+91-9711166242</a>
+      <a href="https://www.linkedin.com/in/puneetbajaj81" target="_blank" rel="noopener" class="panel inline-flex items-center justify-center gap-2 h-12 px-6 w-full sm:w-auto !rounded-xl text-sm font-semibold text-ink leading-none whitespace-nowrap hover:border-cy transition"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="shrink-0 w-4 h-4 text-cyd" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>LinkedIn</a>
+    </div>
+    <div class="grid sm:grid-cols-2 items-start gap-3 max-w-2xl mx-auto pt-6 text-left text-xs text-slate">
+      <div class="panel p-4"><span class="text-ink font-semibold">Education:</span> MBA (Finance) – AIMA · M.Com · B.Com – Delhi University · PG Diploma in International Business Operations · Taxation & Corporate Law · Advanced Diploma in Software Technology – CMC</div>
+      <div class="panel p-4"><span class="text-ink font-semibold">Location:</span> Delhi NCR, India · open to hybrid / remote / relocation discussions</div>
+    </div>
+    <div class="text-xs text-slate/70 pt-6">© 2026 Puneet Bajaj. Interactive demos use synthetic data for illustration only.</div>
+  </div>
+</footer>
+
+<script>
+
+/* ---------- reveal + counters ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('[data-count]').forEach(el=>{
+  const t=+el.dataset.count;let c=0;const step=Math.max(1,Math.ceil(t/40));
+  const iv=setInterval(()=>{c=Math.min(t,c+step);el.textContent=c;if(c>=t)clearInterval(iv)},30);
+});
+
+/* ---------- tabs ---------- */
+document.querySelectorAll('#tabs .tab').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('#tabs .tab').forEach(x=>x.classList.remove('active'));b.classList.add('active');
+  document.querySelectorAll('.tabpane').forEach(p=>p.classList.add('hidden'));
+  document.getElementById(b.dataset.tab).classList.remove('hidden');
+  window.dispatchEvent(new Event('resize'));
+});
+
+Chart.defaults.color='#5A6782';Chart.defaults.font.family="'Public Sans', system-ui, -apple-system, 'Segoe UI', sans-serif";
+const grid={color:'rgba(31,42,68,.08)'};
+
+/* ---------- TAB 1: Forecast lab ---------- */
+function rng(seed){return()=>{seed=(seed*16807)%2147483647;return(seed-1)/2147483646}}
+function genData(noiseLvl){
+  const r=rng(42),N=60,out=[];
+  const seas=[.94,.93,1.04,.96,.97,1.06,.95,.96,1.05,.97,.99,1.18];
+  for(let t=0;t<N;t++){
+    const base=100+1.1*t;const n=1+(r()-.5)*0.05*noiseLvl*2;
+    out.push(base*seas[t%12]*n);
+  }
+  return out;
+}
+const models={
+  naive:{name:'Naive (last value)',f:(tr,h)=>Array(h).fill(tr[tr.length-1])},
+  ma:{name:'Moving avg (3)',f:(tr,h)=>{const m=(tr.at(-1)+tr.at(-2)+tr.at(-3))/3;return Array(h).fill(m)}},
+  snaive:{name:'Seasonal naive',f:(tr,h)=>Array.from({length:h},(_,i)=>tr[tr.length-12+(i%12)])},
+  ts:{name:'Trend + seasonality',f:(tr,h)=>trendSeas(tr,h)},
+  ens:{name:'Ensemble (blend)',f:(tr,h)=>{const a=trendSeas(tr,h),b=models.snaive.f(tr,h);return a.map((v,i)=>.7*v+.3*b[i])}}
+};
+function trendSeas(tr,h){
+  const n=tr.length,xs=[...Array(n).keys()];
+  const mx=(n-1)/2,my=tr.reduce((a,b)=>a+b)/n;
+  let num=0,den=0;xs.forEach(x=>{num+=(x-mx)*(tr[x]-my);den+=(x-mx)**2});
+  const b=num/den,a=my-b*mx;
+  const idx=Array(12).fill(0),cnt=Array(12).fill(0);
+  xs.forEach(x=>{idx[x%12]+=tr[x]/(a+b*x);cnt[x%12]++});
+  const si=idx.map((v,i)=>v/cnt[i]);
+  return Array.from({length:h},(_,i)=>(a+b*(n+i))*si[(n+i)%12]);
+}
+const mape=(a,f)=>a.reduce((s,v,i)=>s+Math.abs((v-f[i])/v),0)/a.length*100;
+let selModel='ens',fcChart;
+const labels=Array.from({length:60},(_,i)=>{const d=new Date(2022,i,1);return d.toLocaleString('en',{month:'short'})+' '+String(d.getFullYear()).slice(2)});
+const mc=document.getElementById('modelChips');
+Object.entries(models).forEach(([k,m])=>{const b=document.createElement('button');b.className='chip'+(k===selModel?' active':'');b.textContent=m.name;b.onclick=()=>{selModel=k;mc.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));b.classList.add('active');updateFc()};mc.appendChild(b)});
+function updateFc(){
+  const h=+document.getElementById('hor').value,nl=+document.getElementById('noise').value;
+  document.getElementById('hVal').textContent=h+' months';
+  document.getElementById('nVal').textContent=['Low','Medium','High'][nl-1];
+  const d=genData(nl),tr=d.slice(0,d.length-h),te=d.slice(d.length-h);
+  const res=Object.entries(models).map(([k,m])=>{const f=m.f(tr,h);return{k,name:m.name,f,mape:mape(te,f)}});
+  const sel=res.find(r=>r.k===selModel);
+  document.getElementById('accOut').textContent=(100-sel.mape).toFixed(1)+'%';
+  document.getElementById('mapeOut').textContent='MAPE '+sel.mape.toFixed(2)+'% on '+h+'-month hold-out';
+  const sorted=[...res].sort((a,b)=>a.mape-b.mape);
+  document.getElementById('board').innerHTML=sorted.map((r,i)=>`<div class="flex items-center gap-2 text-xs"><span class="w-4 text-slate/80 mono">${i+1}</span><span class="w-32 truncate ${r.k===selModel?'text-cyd font-semibold':'text-slate'}">${r.name}</span><div class="flex-1 h-2 bg-paper rounded"><div class="h-2 rounded ${i===0?'bg-em':'bg-cy/60'}" style="width:${Math.max(4,100-r.mape*3)}%"></div></div><span class="mono text-slate w-12 text-right">${(100-r.mape).toFixed(1)}%</span></div>`).join('');
+  const split=d.length-h;
+  const fArr=Array(d.length).fill(null);sel.f.forEach((v,i)=>fArr[split+i]=v);
+  const aHist=d.map((v,i)=>i<split?v:null);
+  const aTest=d.map((v,i)=>i>=split-1?v:null);
+  const cfg={labels,datasets:[
+    {label:'History (train)',data:aHist,borderColor:'#9AA4BA',pointRadius:0,borderWidth:2,tension:.3},
+    {label:'Actual (hold-out)',data:aTest,borderColor:'#4E9A86',pointRadius:3,borderWidth:2,tension:.3},
+    {label:'Forecast – '+models[selModel].name,data:fArr,borderColor:'#5B6CD6',borderDash:[6,4],pointRadius:3,borderWidth:2.5,tension:.3}]};
+  if(!fcChart){fcChart=new Chart(document.getElementById('fcChart'),{type:'line',data:cfg,options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{boxWidth:12}}},scales:{x:{grid,ticks:{maxTicksLimit:10}},y:{grid,title:{display:true,text:'Revenue index'}}}}})}
+  else{fcChart.data=cfg;fcChart.update()}
+}
+['hor','noise'].forEach(id=>document.getElementById(id).oninput=updateFc);
+updateFc();
+
+/* ---------- TAB 2: Ask Ana ---------- */
+const Q=['Q1','Q2','Q3','Q4'];
+const D={
+  'Instruments':{rev:[210,225,238,262],plan:[215,226,245,258],gm:[52.1,52.8,51.9,53.4],gmp:[52.5,52.5,53,53]},
+  'Consumables & Services':{rev:[330,338,352,365],plan:[322,335,350,358],gm:[63.2,63.5,64.1,64.4],gmp:[63,63,63.5,64]},
+  'Software & Informatics':{rev:[60,66,71,79],plan:[62,67,72,78],gm:[74.2,74.8,75.1,75.9],gmp:[74,74.5,75,75.5]}
+};
+const OPEX={act:[205,209,214,226],plan:[204,208,215,222]};
+const sum=(f)=>Q.map((_,i)=>Object.values(D).reduce((s,x)=>s+f(x)[i],0));
+const REV=sum(x=>x.rev),PLAN=sum(x=>x.plan);
+const GP=Q.map((_,i)=>Object.values(D).reduce((s,x)=>s+x.rev[i]*x.gm[i]/100,0));
+const GPP=Q.map((_,i)=>Object.values(D).reduce((s,x)=>s+x.plan[i]*x.gmp[i]/100,0));
+const OI=GP.map((g,i)=>g-OPEX.act[i]),OIP=GPP.map((g,i)=>g-OPEX.plan[i]);
+const f1=v=>v.toFixed(1),pct=v=>v.toFixed(1)+'%',sgn=v=>(v>=0?'+':'')+v.toFixed(1);
+function qOf(s){const m=s.match(/q([1-4])/i);return m?+m[1]-1:null}
+function table(rows,head){return `<div class="overflow-x-auto mt-2"><table class="w-full text-xs"><thead><tr class="text-slate text-left">${head.map(h=>`<th class="py-1 pr-3 font-medium">${h}</th>`).join('')}</tr></thead><tbody>${rows.map(r=>`<tr class="border-t border-line">${r.map((c,i)=>`<td class="py-1 pr-3 ${i?'mono':''} text-ink">${c}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
+function answer(q){
+  const s=q.toLowerCase(),qi=qOf(s)??3,qn=Q[qi];
+  const seg=Object.keys(D).find(k=>s.includes(k.split(' ')[0].toLowerCase()));
+  if(/forecast|guidance|outlook|predict/.test(s)){
+    const h=REV.slice(0,3),fc=trendSeasSimple(REV);
+    return `Using a simple trend on the first three quarters, the model points to roughly <b>$${f1(fc)}M</b> for Q4 revenue vs. an actual/plan of $${f1(REV[3])}M / $${f1(PLAN[3])}M in this sample. In production, Ask Ana pulls the ML forecast and flags guidance risk by driver.`;
+  }
+  if(/headcount|opex|expense|cost/.test(s)){
+    return `<b>Opex ${qn}:</b> $${OPEX.act[qi]}M vs plan $${OPEX.plan[qi]}M (${sgn(OPEX.act[qi]-OPEX.plan[qi])}M, ${pct(OPEX.act[qi]/REV[qi]*100)} of revenue). `+(OPEX.act[qi]>OPEX.plan[qi]?'Spend is running above plan, so it is worth checking hiring timing and variable comp.':'Spend is at or below plan.');
+  }
+  if(/operating margin|op margin|operating income|\boi\b|profit/.test(s)){
+    return `<b>Operating income ${qn}:</b> $${f1(OI[qi])}M (${pct(OI[qi]/REV[qi]*100)} margin) vs plan $${f1(OIP[qi])}M (${pct(OIP[qi]/PLAN[qi]*100)}). Variance ${sgn(OI[qi]-OIP[qi])}M.`+table(Q.map((x,i)=>[x,f1(OI[i]),f1(OIP[i]),pct(OI[i]/REV[i]*100)]),['Qtr','OI $M','Plan $M','OM %']);
+  }
+  if(/gross margin|\bgm\b|margin/.test(s)){
+    if(seg){const x=D[seg];return `<b>${seg} gross margin ${qn}:</b> ${pct(x.gm[qi])} vs plan ${pct(x.gmp[qi])} (${sgn(x.gm[qi]-x.gmp[qi])} pts).`}
+    const gm=GP[qi]/REV[qi]*100,gmp=GPP[qi]/PLAN[qi]*100;
+    const rows=Object.entries(D).map(([k,x])=>[k,pct(x.gm[qi]),pct(x.gmp[qi]),sgn(x.gm[qi]-x.gmp[qi])]);
+    return `<b>Total gross margin ${qn}:</b> ${pct(gm)} vs plan ${pct(gmp)} (${sgn(gm-gmp)} pts). Segment mix and Instruments pricing are the main drivers in this sample.`+table(rows,['Segment','Actual','Plan','Δ pts']);
+  }
+  if(/best|worst|top|lagging|underperform|miss/.test(s)){
+    const rows=Object.entries(D).map(([k,x])=>[k,f1(x.rev[qi]),f1(x.plan[qi]),sgn(x.rev[qi]-x.plan[qi])]).sort((a,b)=>b[3]-a[3]);
+    return `For ${qn}, <b>${rows[0][0]}</b> is furthest ahead of plan and <b>${rows[rows.length-1][0]}</b> is the weakest.`+table(rows,['Segment','Rev $M','Plan $M','Var $M']);
+  }
+  if(/revenue|sales|variance|plan|vs/.test(s)||seg){
+    if(seg){const x=D[seg];return `<b>${seg} ${qn}:</b> revenue $${x.rev[qi]}M vs plan $${x.plan[qi]}M (${sgn(x.rev[qi]-x.plan[qi])}M, ${pct((x.rev[qi]/x.plan[qi]-1)*100)}).`}
+    const rows=Object.entries(D).map(([k,x])=>[k,f1(x.rev[qi]),f1(x.plan[qi]),sgn(x.rev[qi]-x.plan[qi])]);
+    return `<b>Total revenue ${qn}:</b> $${f1(REV[qi])}M vs plan $${f1(PLAN[qi])}M (${sgn(REV[qi]-PLAN[qi])}M, ${pct((REV[qi]/PLAN[qi]-1)*100)}).`+table(rows,['Segment','Rev $M','Plan $M','Var $M']);
+  }
+  return `I can answer questions on <b>revenue, gross margin, operating income, opex, segment performance and forecast</b> for Q1–Q4 in this sample dataset. Try one of the suggestions on the right.`;
+}
+function trendSeasSimple(a){const n=3,d=(a[2]-a[0])/2;return a[2]+d}
+const chat=document.getElementById('chat');
+function add(role,html){const d=document.createElement('div');d.className='flex '+(role==='u'?'justify-end':'');d.innerHTML=`<div class="${role==='u'?'msg-user':'msg-bot'} px-4 py-3 max-w-[88%] leading-relaxed">${html}</div>`;chat.appendChild(d);chat.scrollTop=chat.scrollHeight;return d}
+function ask(q){
+  if(!q.trim())return;add('u',q.replace(/</g,'&lt;'));
+  const t=add('b','<span class="dot">●</span> <span class="dot" style="animation-delay:.2s">●</span> <span class="dot" style="animation-delay:.4s">●</span>');
+  setTimeout(()=>{t.remove();add('b',answer(q))},550);
+}
+add('b','Hi, I\'m <b>Ana</b>, a demo of the GenAI finance assistant Puneet built. Ask me about the sample P&L below (synthetic data).');
+document.getElementById('chatForm').onsubmit=e=>{e.preventDefault();const i=document.getElementById('chatIn');ask(i.value);i.value=''};
+['What was total revenue vs plan in Q3?','Why did gross margin miss plan in Q1?','Which segment is lagging in Q2?','Show operating income by quarter','How is opex trending in Q4?','What is the Q4 forecast?'].forEach(p=>{const b=document.createElement('button');b.className='chip text-left';b.textContent=p;b.onclick=()=>ask(p);document.getElementById('suggest').appendChild(b)});
+
+/* ---------- TAB 3: Bridge ---------- */
+let bridge;
+const $=id=>document.getElementById(id);
+function updateBridge(){
+  const rev=+$('rev').value,gm=+$('gm').value,ox=+$('ox').value,tm=+$('tm').value,lc=+$('lc').value,pr=+$('pr').value,vo=+$('vo').value,fx=+$('fx').value;
+  $('rVal').textContent='$'+rev+'M';$('gmVal').textContent=gm+'%';$('oxVal').textContent=ox+'%';$('tmVal').textContent=tm+'%';$('lcVal').textContent='$'+lc+'K';
+  $('pVal').textContent=sgn(pr)+'%';$('vVal').textContent=sgn(vo)+'%';$('fVal').textContent=sgn(fx)+'%';
+  const gp=rev*gm/100,opex=rev*ox/100,oi=gp-opex,om=oi/rev*100;
+  const affordOpex=rev*(gm-tm)/100,headroom=affordOpex-opex,heads=Math.round(headroom*1000/lc);
+  // bridge
+  const price=rev*pr/100;                     // price drops through ~100%
+  const vol=rev*vo/100*gm/100;                // volume at GM
+  const fxI=rev*fx/100*0.6;                   // FX partial offset
+  const opexVar=-opex*0.01*(vo<0?-0.5:0.5)*0;  // keep opex at plan in bridge for clarity
+  const out=oi+price+vol+fxI;
+  const steps=[['Plan OI',oi,'t'],['Price',price],['Volume',vol],['FX',fxI],['Outlook OI',out,'t']];
+  let run=0;const bars=[],cols=[];
+  steps.forEach(s=>{if(s[2]==='t'){bars.push([0,s[1]]);cols.push('#5B6CD6');run=s[1]}else{bars.push([run,run+s[1]]);cols.push(s[1]>=0?'#4E9A86':'#D0607A');run+=s[1]}});
+  const data={labels:steps.map(s=>s[0]),datasets:[{data:bars,backgroundColor:cols,borderRadius:6}]};
+  if(!bridge){bridge=new Chart($('bridgeChart'),{type:'bar',data,options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>{const v=c.raw;return '$'+(v[1]-v[0]).toFixed(1)+'M'}}}},scales:{x:{grid:{display:false}},y:{grid,title:{display:true,text:'$M'}}}}})}
+  else{bridge.data=data;bridge.update()}
+  const ok=headroom>=0;
+  $('kpiRow').innerHTML=`
+   <div class="panel p-4"><div class="text-xs text-slate">Operating margin (plan)</div><div class="text-2xl font-extrabold ${om>=tm?'text-em':'text-am'}">${om.toFixed(1)}%</div><div class="text-[11px] text-slate/80">target ${tm}%</div></div>
+   <div class="panel p-4"><div class="text-xs text-slate">Opex headroom to target</div><div class="text-2xl font-extrabold ${ok?'text-em':'text-rose'}">${headroom>=0?'+':''}$${headroom.toFixed(1)}M</div><div class="text-[11px] text-slate/80">affordable opex $${affordOpex.toFixed(1)}M</div></div>
+   <div class="panel p-4"><div class="text-xs text-slate">Affordable headcount ${ok?'adds':'reduction'}</div><div class="text-2xl font-extrabold ${ok?'text-cyd':'text-rose'}">${heads>=0?'+':''}${heads}</div><div class="text-[11px] text-slate/80">at $${lc}K loaded cost</div></div>`;
+  const delta=out-oi;
+  $('insight').innerHTML=`<span class="text-cyd font-semibold">Read-out:</span> At $${rev}M revenue and ${gm}% gross margin, holding opex at ${ox}% yields ${om.toFixed(1)}% operating margin: ${ok?`<b class="text-em">${Math.abs(heads)} heads of capacity</b> above the ${tm}% target`:`<b class="text-rose">${Math.abs(heads)} heads over</b> what the ${tm}% target can afford`}. Combined price, volume and FX moves change operating income by <b>${delta>=0?'+':''}$${delta.toFixed(1)}M</b> (${(delta/rev*100).toFixed(1)} pts of revenue), so I'd ${delta<0?'hold hiring until the shortfall is covered by mix or cost actions':'phase hiring to the upside while watching volume risk'}.`;
+}
+['rev','gm','ox','tm','lc','pr','vo','fx'].forEach(id=>$(id).oninput=updateBridge);
+updateBridge();
+
+/* ---------- TAB 4: Month tracker ---------- */
+const CT_DAYS=[];(()=>{const d=new Date(2026,9,1);while(d.getMonth()===9){const w=d.getDay();if(w&&w<6)CT_DAYS.push(d.getDate());d.setDate(d.getDate()+1)}})();
+const CT_N=CT_DAYS.length,CT_OPEN=600;
+const CT_LBL=CT_DAYS.map(x=>'Oct '+x);
+const CT=(()=>{
+  const r=rng(7);
+  const shape=CT_DAYS.map((_,i)=>0.75+0.5*Math.pow(i/(CT_N-1),1.6));
+  const norm=tot=>{const z=shape.reduce((a,b)=>a+b);return shape.map(x=>x/z*tot)};
+  const oF=norm(260),sF=norm(245),rF=norm(240);
+  const mk=(F,b)=>F.map((v,i)=>v*(1+b[0]+(b[1]-b[0])*i/(CT_N-1)+(r()-.5)*.12));
+  return{oF,sF,rF,oA:mk(oF,[.04,.03]),sA:mk(sF,[-.01,-.07]),rA:mk(rF,[-.005,-.045])};
+})();
+const CT_M={
+  orders:{name:'Orders',F:CT.oF,A:CT.oA},
+  revenue:{name:'Revenue',F:CT.rF,A:CT.rA},
+  shipments:{name:'Shipments',F:CT.sF,A:CT.sA},
+  backlog:{name:'Backlog',F:CT.oF.map((v,i)=>v-CT.sF[i]),A:CT.oA.map((v,i)=>v-CT.sA[i]),level:true}
+};
+let ctSel='revenue',ctView='cum',ctChart;
+const ctSum=(a,n)=>{let s=0;for(let i=0;i<n;i++)s+=a[i];return s};
+const ctM=v=>'$'+Math.abs(v).toFixed(1)+'M';
+function ctProj(key,t,e){
+  if(key==='backlog'){const o=ctProj('orders',t,e),s=ctProj('shipments',t,e);return o.map((v,i)=>i<t?null:v-s[i])}
+  const m=CT_M[key],p=ctSum(m.A,t)/ctSum(m.F,t),ef=key==='orders'?0:e;
+  return m.F.map((v,i)=>i<t?null:v*p*(1+ef));
+}
+function ctStat(key,t,e){
+  const m=CT_M[key],P=ctProj(key,t,e),off=m.level?CT_OPEN:0;
+  const mtdA=ctSum(m.A,t),mtdF=ctSum(m.F,t),monthF=ctSum(m.F,CT_N);
+  const rem=P.reduce((s,v)=>s+(v||0),0);
+  const curA=off+mtdA,curF=off+mtdF,endF=off+monthF,land=off+mtdA+rem;
+  return{P,mtdA,mtdF,monthF,curA,curF,endF,land,vr:(curA/curF-1)*100,lv:(land/endF-1)*100};
+}
+function ctColor(v){return v>2?'#4E9A86':v<-2?'#D0607A':'#D9893B'}
+function ctInsights(t,e){
+  const S={},S0={};Object.keys(CT_M).forEach(k=>{S[k]=ctStat(k,t,e);S0[k]=ctStat(k,t,0)});
+  const rd=CT_N-t,out=[],r=S.revenue,gap=r.land-r.endF;
+  const reqD=rd>0?(r.monthF-r.mtdA)/rd:0,curD=r.mtdA/t;
+  if(gap<-r.endF*.01) out.push({sev:'risk',tag:'Revenue',title:'Revenue pacing '+ctM(gap)+' below forecast',body:'Landing ≈ '+ctM(r.land)+' vs '+ctM(r.endF)+' forecast ('+sgn(r.lv)+'%). '+(rd>0?'Remaining '+rd+' days need '+ctM(reqD)+'/day vs '+ctM(curD)+'/day averaged so far.':'Month is complete.'),act:'Rank open orders by revenue value and ship/invoice the largest first; confirm installation and acceptance milestones that gate recognition.'});
+  else if(gap>r.endF*.01) out.push({sev:'good',tag:'Revenue',title:'Revenue pacing '+ctM(gap)+' above forecast',body:'Landing ≈ '+ctM(r.land)+' vs '+ctM(r.endF)+' forecast ('+sgn(r.lv)+'%).',act:'Confirm the upside is repeatable (not pull-forward) before raising guidance; protect delivery commitments.'});
+  else out.push({sev:'watch',tag:'Revenue',title:'Revenue on track to forecast',body:'Landing ≈ '+ctM(r.land)+' vs '+ctM(r.endF)+' ('+sgn(r.lv)+'%).',act:'Hold the line; watch back-end loading in the final days.'});
+  const ov=S.orders.vr,sv=S.shipments.vr,bl=S.backlog.curA-S.backlog.curF;
+  if(ov>2&&sv<-2) out.push({sev:'risk',tag:'Orders vs shipments',title:'Demand ahead, execution behind',body:'Orders are '+sgn(ov)+'% vs forecast but shipments are '+sgn(sv)+'%, so backlog sits '+ctM(bl)+' above plan.',act:'Release blocked orders, add shift or logistics capacity, and expedite the top lines; review supply constraints with Operations.'});
+  else if(ov<-2) out.push({sev:'watch',tag:'Orders',title:'Order intake lagging forecast',body:'Orders are '+sgn(ov)+'% vs forecast MTD (landing '+sgn(S.orders.lv)+'%). Shortfall hits next month revenue via backlog.',act:'Review pipeline conversion, discounting and late-stage deals with Sales finance; refresh next-month shipment outlook.'});
+  else if(sv<-2) out.push({sev:'watch',tag:'Shipments',title:'Shipments behind forecast',body:'Shipments are '+sgn(sv)+'% vs forecast MTD while orders are '+sgn(ov)+'%.',act:'Check for blocked orders, supplier delays and logistics bottlenecks.'});
+  else out.push({sev:'good',tag:'Orders & shipments',title:'Orders and shipments in line',body:'Orders '+sgn(ov)+'%, shipments '+sgn(sv)+'% vs forecast MTD.',act:'No intervention needed; continue daily monitoring.'});
+  const cov=S.backlog.curA/(S.shipments.mtdA/t),covF=S.backlog.curF/(S.shipments.mtdF/t);
+  if(cov>covF*1.08) out.push({sev:'watch',tag:'Backlog',title:'Backlog cover is deeper than planned',body:'Backlog covers ≈ '+cov.toFixed(0)+' days of shipments vs '+covF.toFixed(0)+' planned. Next-month revenue is supported; the constraint is execution, not demand.',act:'Prioritize capacity and component availability; sequence builds by value and customer commitment.'});
+  else if(cov<covF*.92) out.push({sev:'risk',tag:'Backlog',title:'Backlog cover thinner than planned',body:'Backlog covers ≈ '+cov.toFixed(0)+' days of shipments vs '+covF.toFixed(0)+' planned, a risk to next-month revenue.',act:'Accelerate order conversion; assess whether the guidance range still holds for next period.'});
+  else out.push({sev:'good',tag:'Backlog',title:'Backlog coverage healthy',body:'Backlog covers ≈ '+cov.toFixed(0)+' days of shipments vs '+covF.toFixed(0)+' planned.',act:'Maintain build plan and monitor blocked orders.'});
+  if(t>=3){
+    const la=ctSum(CT_M.revenue.A.slice(t-3),3)-ctSum(CT_M.revenue.A.slice(t-3),0),
+          a3=CT_M.revenue.A.slice(t-3,t).reduce((x,y)=>x+y,0),f3=CT_M.revenue.F.slice(t-3,t).reduce((x,y)=>x+y,0),mv=(a3/f3-1)*100;
+    out.push({sev:mv<-2?'risk':mv>2?'good':'watch',tag:'Momentum',title:'Last 3 days revenue '+sgn(mv)+'% vs daily forecast',body:mv<-2?'Run-rate is deteriorating versus the plan curve, so the gap is likely to widen without action.':mv>2?'Recent run-rate is improving versus plan, helping close any MTD gap.':'Run-rate is tracking the plan curve.',act:mv<-2?'Escalate daily: owners for top at-risk shipments and a same-week recovery plan.':'Keep daily review cadence through month-end.'});
+  }
+  const lift=S.revenue.land-S0.revenue.land;
+  if(e>0) out.push({sev:'good',tag:'Scenario',title:'Expedite lever adds '+ctM(lift),body:'At +'+(e*100).toFixed(0)+'% on remaining shipments and revenue, landing moves to '+ctM(S.revenue.land)+(gap<0?', closing '+Math.min(100,Math.round(lift/Math.abs(S0.revenue.land-S0.revenue.endF)*100))+'% of the gap vs forecast.':'.'),act:'Validate capacity and cost of expediting (freight, overtime) before committing.'});
+  else if(gap<0) out.push({sev:'watch',tag:'Scenario',title:'Size the recovery',body:'Use the expedite slider to test how much of the '+ctM(gap)+' gap can be closed by pulling forward shipments.',act:'Agree the lever and owner with Operations.'});
+  const rank={risk:0,watch:1,good:2};out.sort((a,b)=>rank[a.sev]-rank[b.sev]);
+  return{out,S,rd,gap};
+}
+function ctRender(){
+  const t=+$('ctDay').value,e=+$('ctExp').value/100,key=ctSel,m=CT_M[key],st=ctStat(key,t,e),off=m.level?CT_OPEN:0;
+  $('ctDayVal').textContent=CT_LBL[t-1]+' · day '+t+' of '+CT_N;
+  $('ctBar').style.width=(t/CT_N*100)+'%';
+  $('ctExpVal').textContent=e?'+'+(e*100).toFixed(0)+'%':'off';
+  // KPI cards
+  $('ctKpis').innerHTML=Object.keys(CT_M).map(k=>{
+    const s=ctStat(k,t,e),mm=CT_M[k],c=mm.level?(Math.abs(s.vr)>3?'#D9893B':'#4E9A86'):ctColor(s.vr),cl=mm.level?(Math.abs(s.lv)>3?'#D9893B':'#4E9A86'):ctColor(s.lv);
+    return `<div class="panel p-4 cursor-pointer transition ${k===key?'border-cy':''}" style="${k===key?'border-color:#5B6CD6':''}" data-k="${k}">
+      <div class="flex justify-between text-xs text-slate"><span>${mm.name}${mm.level?' (level)':' MTD'}</span><span class="mono" style="color:${c}">${sgn(s.vr)}% vs fcst</span></div>
+      <div class="text-2xl font-extrabold text-ink mt-1">$${s.curA.toFixed(1)}M</div>
+      <div class="text-[11px] text-slate/80 mono">forecast $${s.curF.toFixed(1)}M</div>
+      <div class="text-xs mt-2 border-t border-line pt-2 text-slate">${mm.level?'Month-end':'Landing'} <span class="text-ink font-semibold">$${s.land.toFixed(1)}M</span> <span style="color:${cl}">(${sgn(s.lv)}% vs $${s.endF.toFixed(1)}M)</span></div></div>`}).join('');
+  document.querySelectorAll('#ctKpis [data-k]').forEach(el=>el.onclick=()=>{ctSel=el.dataset.k;ctRender()});
+  // chart
+  $('ctTitle').textContent=m.name+' · '+(ctView==='cum'?(m.level?'daily backlog level':'cumulative month-to-date'):(m.level?'daily net change (orders − shipments)':'daily'))+' vs forecast ($M)';
+  let datasets;
+  if(ctView==='cum'){
+    let c=off;const fC=m.F.map(v=>(c+=v));
+    c=off;const aC=m.A.map((v,i)=>i<t?(c+=v):null);
+    const pC=Array(CT_N).fill(null);pC[t-1]=aC[t-1];let run=aC[t-1];for(let i=t;i<CT_N;i++){run+=st.P[i];pC[i]=run}
+    datasets=[
+      {label:'Forecast',data:fC,borderColor:'#9AA4BA',borderWidth:2,pointRadius:0,tension:.25,type:'line'},
+      {label:'Actual',data:aC,borderColor:'#5B6CD6',backgroundColor:'rgba(91,108,214,.15)',fill:true,borderWidth:3,pointRadius:2,tension:.25,type:'line'},
+      {label:e?'Projection (with lever)':'Projection (current pace)',data:pC,borderColor:'#D9893B',borderDash:[6,4],borderWidth:2.5,pointRadius:0,tension:.25,type:'line'}];
+  }else{
+    const aD=m.A.map((v,i)=>i<t?v:null),pD=st.P.map(v=>v===null?null:v);
+    datasets=[
+      {label:'Actual',data:aD,backgroundColor:'rgba(91,108,214,.85)',borderRadius:4,type:'bar'},
+      {label:'Projected',data:pD,backgroundColor:'rgba(217,137,59,.35)',borderRadius:4,type:'bar'},
+      {label:'Forecast',data:m.F,borderColor:'#9AA4BA',borderWidth:2,pointRadius:2,tension:.2,type:'line'}];
+  }
+  const cfg={labels:CT_LBL,datasets};
+  if(ctChart)ctChart.destroy();
+  ctChart=new Chart($('ctChart'),{data:cfg,options:{responsive:true,maintainAspectRatio:false,interaction:{mode:'index',intersect:false},plugins:{legend:{labels:{boxWidth:12}},tooltip:{callbacks:{label:c=>c.dataset.label+': $'+(c.raw===null?'–':c.raw.toFixed(1))+'M'}}},scales:{x:{grid:{display:false},ticks:{maxTicksLimit:11}},y:{grid,title:{display:true,text:'$M'}}}}});
+  // heat strip
+  $('ctHeatTitle').textContent='Daily variance vs forecast · '+m.name+(m.level?' (level)':'')+' · tap-hover a cell for detail';
+  let cA=off,cF=off;
+  $('ctHeat').innerHTML=CT_LBL.map((l,i)=>{
+    if(i>=t)return `<div class="flex-1 h-8 rounded bg-paper border border-line" title="${l}: upcoming"></div>`;
+    cA+=m.A[i];cF+=m.F[i];
+    const v=m.level?(cA/cF-1)*100:(m.A[i]/m.F[i]-1)*100;
+    return `<div class="flex-1 h-8 rounded" style="background:${ctColor(v)};opacity:${Math.min(1,.45+Math.abs(v)/12)}" title="${l}: ${sgn(v)}% vs forecast"></div>`}).join('');
+  // insights
+  const I=ctInsights(t,e),cs={risk:['#D0607A','RISK'],watch:['#D9893B','WATCH'],good:['#4E9A86','ON TRACK']};
+  const nr=I.out.filter(x=>x.sev==='risk').length;
+  $('ctInsTag').textContent=CT_LBL[t-1]+' · '+nr+' risk'+(nr===1?'':'s')+' flagged';
+  $('ctInsights').innerHTML=I.out.map(x=>`<div class="panel p-5 space-y-2" style="border-left:3px solid ${cs[x.sev][0]}">
+    <div class="flex justify-between items-center"><span class="text-[11px] mono text-slate">${x.tag}</span><span class="text-[10px] font-bold px-2 py-0.5 rounded" style="color:${cs[x.sev][0]};background:${cs[x.sev][0]}22">${cs[x.sev][1]}</span></div>
+    <div class="text-ink font-semibold text-sm">${x.title}</div>
+    <div class="text-xs text-slate leading-relaxed">${x.body}</div>
+    <div class="text-xs text-ink leading-relaxed pt-2 border-t border-line"><span class="text-cyd font-semibold">Action:</span> ${x.act}</div></div>`).join('');
+  window.ctSummary=CT_LBL[t-1]+' (day '+t+'/'+CT_N+') synthetic demo: '+I.out.map(x=>'['+cs[x.sev][1]+'] '+x.title+'. '+x.act).join(' ');
+}
+document.querySelectorAll('#ctViewChips .chip').forEach(b=>b.onclick=()=>{document.querySelectorAll('#ctViewChips .chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');ctView=b.dataset.v;ctRender()});
+$('ctDay').oninput=ctRender;$('ctExp').oninput=ctRender;
+$('ctCopy').onclick=()=>{try{navigator.clipboard.writeText(window.ctSummary);$('ctCopy').textContent='Copied ✓';setTimeout(()=>$('ctCopy').textContent='Copy CFO summary',1500)}catch(_){}};
+$('ctDay').value=CT_DAYS.indexOf(20)+1||14;
+ctRender();
+
+/* ---------- tab discoverability ---------- */
+(()=>{
+  const tabs=[...document.querySelectorAll('#tabs .tab')],hint=document.getElementById('tabHint');
+  let i=0,timer=null,done=false,visible=false;
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const step=()=>{
+    if(done||!visible)return;
+    const idle=tabs.filter(t=>!t.classList.contains('active'));
+    if(!idle.length)return;
+    const t=idle[i%idle.length];i++;
+    t.classList.remove('nudge');void t.offsetWidth;t.classList.add('nudge');
+  };
+  const stop=()=>{done=true;clearInterval(timer);tabs.forEach(t=>t.classList.remove('nudge'));if(hint)hint.classList.add('gone')};
+  tabs.forEach(t=>{t.addEventListener('click',stop);t.addEventListener('animationend',()=>t.classList.remove('nudge'))});
+  if(reduce)return;
+  new IntersectionObserver(es=>es.forEach(e=>{visible=e.isIntersecting;if(visible&&!timer&&!done){step();timer=setInterval(step,1500)}}),{threshold:.5}).observe(document.getElementById('tabs'));
+})();
+
+/* ---------- SKILLS ---------- */
+const skills=[
+ {c:'fpa',n:'Annual Operating Plan (AOP / SPR)',d:'Consolidated BU, regional and cost-centre plans for a $7B business',l:95},
+ {c:'fpa',n:'Rolling Forecasts & LRP',d:'Monthly and quarterly forecasts, long-range plan, guidance attainment',l:94},
+ {c:'fpa',n:'Variance, PVM & Margin Analysis',d:'Actual vs. plan vs. forecast vs. prior year; price-volume-currency-mix',l:95},
+ {c:'fpa',n:'Scenario, Headcount & Cost Planning',d:'Headcount affordability, cost allocation, what-if and driver-based models',l:92},
+ {c:'fpa',n:'CFO Reporting & Performance Management',d:'Monthly CFO pack for the Americas and Europe; executive dashboards',l:95},
+ {c:'fpa',n:'Commercial Finance',d:'Revenue, orders and backlog; deal profitability; pricing; quota and sales incentives',l:88},
+ {c:'lead',n:'Strategic Business Partnering',d:'CFO staff and business-unit leaders; turning analysis into decisions',l:93},
+ {c:'lead',n:'GCC / Finance CoE Leadership',d:'Set up and led the FP&A, Analytics & Transformation pillar',l:90},
+ {c:'lead',n:'Finance Transformation',d:'Ignite program; PoCs of Oracle EPM Cloud, SAP Analytics Cloud and Anaplan',l:90},
+ {c:'ai',n:'ML Forecasting',d:'Python, Prophet, LSTM, XGBoost, LightGBM; >95% accuracy in rolling forecasts',l:92},
+ {c:'ai',n:'GenAI for Finance',d:'Ask Ana assistant; natural-language P&L queries; first-draft commentary',l:88},
+ {c:'ai',n:'Automation & RPA',d:'UiPath, Blue Prism, Power Apps, VBA; 4,000+ hours saved a year',l:90},
+ {c:'data',n:'Planning Systems & ERP',d:'Hyperion Essbase, HFM, Oracle DRM, SAP S/4HANA, SAP CO-PA',l:92},
+ {c:'data',n:'Power BI & Microsoft Fabric',d:'Revenue Control Tower; governed finance data and dashboards',l:91},
+ {c:'data',n:'Snowflake & Data Controls',d:'Reconciliation and data-lineage controls across SAP, Essbase and Snowflake',l:88}
+];
+const col={ai:'#5B6CD6',fpa:'#4E9A86',data:'#D9893B',lead:'#8E7CC3'};
+function renderSkills(f){
+  $('skillGrid').innerHTML=skills.filter(s=>f==='all'||s.c===f).map(s=>`<div class="panel p-4"><div class="flex justify-between items-center"><div class="text-ink font-semibold text-sm">${s.n}</div><span class="mono text-xs" style="color:${col[s.c]}">${s.l}</span></div><div class="text-xs text-slate mt-1">${s.d}</div><div class="h-1.5 bg-paper rounded mt-3"><div class="h-1.5 rounded" style="width:${s.l}%;background:${col[s.c]}"></div></div></div>`).join('');
+}
+renderSkills('all');
+document.querySelectorAll('#skillFilter .chip').forEach(b=>b.onclick=()=>{document.querySelectorAll('#skillFilter .chip').forEach(x=>x.classList.remove('active'));b.classList.add('active');renderSkills(b.dataset.f)});
+new Chart($('radar'),{type:'radar',data:{labels:['Planning & Forecasting','Business Partnering','CFO Reporting','Scenario & Cost Models','AI & Automation','Transformation'],datasets:[{label:'Self-assessed depth',data:[95,93,95,92,92,90],backgroundColor:'rgba(91,108,214,.18)',borderColor:'#5B6CD6',pointBackgroundColor:'#4E9A86',borderWidth:2}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},scales:{r:{min:60,max:100,grid:{color:'rgba(31,42,68,.12)'},angleLines:{color:'rgba(31,42,68,.12)'},pointLabels:{color:'#1F2A44',font:{size:11}},ticks:{display:false}}}}});
+</script>
 </body>
 </html>
